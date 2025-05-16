@@ -21,9 +21,10 @@ public class QuadTree
         return !divided;
     }
 
-    public QuadTree(Vector2 position, float size, int capacity)
+    public QuadTree(Vector2 topLeft, Vector2 bottomRight, float size, int capacity)
     {
-        this.position = position;
+        this.topLeft = topLeft;
+        this.bottomRight = bottomRight;
         this.size = size;
         this.capacity = capacity;
         this.particles = new Particle[capacity];
@@ -36,20 +37,20 @@ public class QuadTree
 
     public bool Insert(Particle particle)
     {
-        // Insert a particle into the quadtree
-        if(capacity > particle.Count)
-        {
-            particles[particle.Count] = particle;
-            particle.Count++;
-            return true;
-        }
-        else if (!divided) Subdivide();
+        // // Insert a particle into the quadtree
+        // if(capacity > particles.Count())
+        // {
+        //     particles[particles.Count()] = particle;
+        //     particles.Count();
+        //     return true;
+        // }
+        // else if (!divided) Subdivide();
 
-        // Try to insert into one of the children
-        if (northeast.Insert(particle)) return true;
-        if (northwest.Insert(particle)) return true;
-        if (southeast.Insert(particle)) return true;
-        if (southwest.Insert(particle)) return true;
+        // // Try to insert into one of the children
+        // if (northeast.Insert(particle)) return true;
+        // if (northwest.Insert(particle)) return true;
+        // if (southeast.Insert(particle)) return true;
+        // if (southwest.Insert(particle)) return true;
         return false;
     }
 
@@ -81,13 +82,7 @@ public class QuadTree
     public bool MoveParticleUp(Vector2 position)
     {
         // Move the particle at the given position up (increase y by 1 unit)
-        Particle particle = FindParticleAt(position);
-        if (particle != null)
-        {
-            particle.position += Vector2.up;
-            return true;
-        }
-        return false;
+        return true;
     }
 
 
