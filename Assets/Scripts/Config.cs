@@ -3,8 +3,14 @@ using UnityEngine;
 public class Config : MonoBehaviour
 {
     //Simulation parameters
-    public static float DT = 20f; // Time step
+    public static float DT = 0.01f; // Time step
     public static float G = 0.5f; // Acceleration of gravity
+    public static int GRID_SIZE_X = 60; // Number of grid cells in the x direction
+    public static int GRID_SIZE_Y = 30; // Number of grid cells in the y direction
+    public static float X_MIN = -7f; // Minimum x coordinate for the grid
+    public static float X_MAX = 17f; // Maximum x coordinate for the grid
+    public static float Y_MIN = -5f; // Minimum y coordinate for the grid
+    public static float Y_MAX = 6f; // Maximum y coordinate for the grid
 
     // Two set of parameters are necessary for the game
     // Normal water parameters
