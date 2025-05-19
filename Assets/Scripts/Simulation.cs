@@ -18,6 +18,8 @@ public class Simulation : MonoBehaviour
     public float x_max = X_MAX; // The maximum x coordinate for the grid
     public float y_min = Y_MIN; // The minimum y coordinate for the grid
     public float y_max = Y_MAX; // The maximum y coordinate for the grid
+    public bool showVelocity = false;
+    
 
     void Start()
     {
@@ -31,6 +33,96 @@ public class Simulation : MonoBehaviour
         }
 
         particles = new list(FindObjectsByType<Particle>(FindObjectsSortMode.None));
+    }
+
+
+    // NEED TO IMPLEMENT THE KERNEL FUNCTIONS
+    float Kernel(Vector2 p, Vector2 q)
+    {
+        float h = KERNEL_RADIUS;
+        Vector2 rVec = p - q;
+        float r2 = rVec.sqrMagnitude;
+
+        if (r2 >= h * h)
+            return 0f;
+
+        float coef = 4f / (Mathf.PI * Mathf.Pow(h, 8));
+        return coef * Mathf.Pow(h * h - r2, 3);
+    }
+
+    Vector2 gradientKernel(Vector2 p, Vector2 q)
+    {
+        float h = KERNEL_RADIUS;
+        Vector2 rVec = p - q;
+        float r2 = rVec.sqrMagnitude;
+
+        if (r2 == 0f || r2 >= h * h)
+            return Vector2.zero;
+
+        float coef = -24f / (Mathf.PI * Mathf.Pow(h, 8));
+        return coef * Mathf.Pow(h * h - r2, 2) * rVec;
+    }
+
+
+    void updatePosition()
+    {
+        foreach (Particle p in particles)
+        {
+            p.prevPosition = p.position;
+            p.position += p.velocity * DT;
+        }
+    }
+
+    void updateVelocity()
+    {
+        foreach (Particle p in particles)
+        {
+            p.velocity += p.acceleration * DT;
+        }
+    }
+
+    void updateGrid()
+    {
+        // Build the grid
+        for (int i = 0; i < grid_size_x; i++)
+        {
+            for (int j = 0; j < grid_size_y; j++)
+            {
+                grid[i, j].Clear();
+            }
+        }
+        foreach (Particle p in particles)
+        {
+            if (p.grid_x < 0 || p.grid_x >= grid_size_x || p.grid_y < 0 || p.grid_y >= grid_size_y)
+            {
+                continue; // Skip particles outside the grid
+            }
+            grid[p.grid_x, p.grid_y].Add(p);
+        }
+    }
+
+    void buildNeighbors()
+    {
+        updateGrid();
+        
+        foreach (Particle p in particles)
+        {
+            p.neighbors.Clear();
+            for (int i = p.grid_x - 1; i <= p.grid_x + 1; i++)
+            {
+                for (int j = p.grid_y - 1; j <= p.grid_y + 1; j++)
+                {
+                    // Skip out-of-bounds grid cells
+                    if (!(i >= 0 && i < grid_size_x && j >= 0 && j < grid_size_y)) continue;
+                    foreach (Particle q in grid[i, j])
+                    {
+                        if (p == q) continue;
+                        float r = Vector2.Distance(p.position, q.position);
+                        if (r < p.KernelRadius) p.neighbors.Add(q);
+                    }
+                }
+            }
+        }
     }
 
     void DoubleDensityRelaxation()
@@ -51,47 +143,27 @@ public class Simulation : MonoBehaviour
             float grid_X = p.position.x / (x_max - x_min) * grid_size_x;
             float grid_Y = p.position.y / (y_max - y_min) * grid_size_y;
 
-            for (int i = p.grid_x - (int)grid_X; i <= p.grid_x + (int)grid_X; i++)
+            foreach (Particle q in p.neighbors)
             {
-                for (int j = p.grid_y - (int)grid_Y; j <= p.grid_y + (int)grid_Y; j++)
+                float r = Vector2.Distance(p.position, q.position);
+                if (r < p.KernelRadius)
                 {
-                    if (i >= 0 && i < grid_size_x && j >= 0 && j < grid_size_y)
-                    {
-                        foreach (Particle q in grid[i, j])
-                        {
-                            if (p != q)
-                            {
-                                float r = Vector2.Distance(p.position, q.position);
-                                if (r < p.KernelRadius)
-                                {
-                                    float closeness = 1 - r / p.KernelRadius;
-                                    p.density += closeness * closeness;
-                                    p.density_near += closeness * closeness * closeness;
+                    float closeness = 1 - r / p.KernelRadius;
+                    p.density += closeness * closeness;
+                    p.density_near += closeness * closeness * closeness;
 
-                                    // Store neighbor information
-                                    neighbors.Add(q);
-                                    neighborUnitX.Add((q.position.x - p.position.x) / r);
-                                    neighborUnitY.Add((q.position.y - p.position.y) / r);
-                                    neighborcloseness.Add(closeness);
-                                }
-                            }
-                        }
-                    }
+                    // Store neighbor information
+                    neighborUnitX.Add((q.position.x - p.position.x) / r);
+                    neighborUnitY.Add((q.position.y - p.position.y) / r);
+                    neighborcloseness.Add(closeness);
                 }
             }
 
             float pressure = p.Stiffness * (p.density - p.RestDensity);
             float nearPressure = p.NearStiffness * p.density_near;
 
-            if (pressure > 1f)
-            {
-                pressure = 1f;
-            }
-            
-            if (nearPressure > 1f)
-            {
-                nearPressure = 1f;
-            }
+            if (pressure > 1f) pressure = 1f;
+            if (nearPressure > 1f) nearPressure = 1f;
 
             Vector2 disp = Vector2.zero;
 
@@ -110,7 +182,7 @@ public class Simulation : MonoBehaviour
             }
 
             // Update particle position
-            p.position += disp;
+            p.position += disp; // I DON'T LIKE MODIFICATING THE POSITION HERE
         }
     }
 
@@ -153,35 +225,100 @@ public class Simulation : MonoBehaviour
 
     }
 
-    // Algorithm 1 : Simulation Step
-    void FixedUpdate()
+    void drawVelocity()
     {
-        // Apply gravity
+        foreach(Particle p in particles)
+        {
+            p.drawVelocity();
+        }
+    }
+    void drawDensity()
+    {
         foreach (Particle p in particles)
         {
-            p.velocity += new Vector2(0, -G * DT);
+            p.drawDensity();
         }
+    }
 
-        ViscosityImpulse();
-
-        // Save previous position and update position
+    void applyBodyForce()
+    {
+        // Apply body force to the particles
         foreach (Particle p in particles)
         {
-            p.prevPosition = p.position;
-            p.position += p.velocity * DT;
-            p.UpdateState();
+            p.acceleration += new Vector2(0, -G);
         }
+    }
 
-        SpringAdjustment();
-        SpringDisplacement();
-        DoubleDensityRelaxation();
+    void computePressure()
+    {
+        foreach (Particle p in particles)
+        {
+            // EQUATION OF STATE
+            const float k = 0.04f;
+            p.pressure = p.density<0 ? k * (Mathf.Pow(p.RestDensity / p.density, 7f) - 1f):0f;
+        }
+    }
+
+    void computeDensity()
+    {
+        foreach (Particle p in particles)
+        {
+            p.density = 0f;
+            foreach (Particle q in p.neighbors)
+            {
+                p.density += Kernel(p.position, q.position);
+            }
+        }
+    }
+
+    void applyPressure()
+    {
+        foreach (Particle p in particles)
+        {
+            Vector2 pressureAcc = Vector2.zero;
+            foreach (Particle q in p.neighbors)
+            {
+                float coefficient = p.pressure / Mathf.Pow(p.density, 2) + q.pressure / Mathf.Pow(q.density, 2);
+                pressureAcc +=  coefficient * gradientKernel(p.position, q.position);
+            }
+            p.acceleration += pressureAcc;
+        }
+    }
+
+
+    // Algorithm 1 : Simulation Step
+    void Update()
+    {
+        // Update the grid and neighbors
+        buildNeighbors();
+        computeDensity();
+        // GRAVITY
+        applyBodyForce();
+
+        // // PRESSURE
+        // computePressure();
+        // applyPressure();
+
+        // // VISCOSITY
+        // ViscosityImpulse();
+
+
+
+        // SPRING 
+        // SpringAdjustment();
+        // SpringDisplacement();
+        // DoubleDensityRelaxation();
+
+
+
+        updateVelocity();
+        updatePosition();
         ResolveCollisions();
+        foreach (Particle p in particles) p.UpdateState();
 
-        // Use previous position to compute next velocity
-        foreach (Particle p in particles)
-        {
-            p.velocity = (p.position - p.prevPosition) / DT;
-            p.UpdateState();
-        }
+        if (showVelocity) drawVelocity();
+        drawDensity();
+        // Debug.Log("Update is running");
+        
     }
 }

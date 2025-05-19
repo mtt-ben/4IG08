@@ -17,7 +17,7 @@ public class Config : MonoBehaviour
     public static float REST_DENSITY = 3.0f; // Default density, will be compared to local density to calculate pressure
     public static float STIFFNESS = 0.1f; // Pressure factor
     public static float STIFFNESS_NEAR = STIFFNESS * 10f; // Near pressure factor, pressure when particles are close to each other
-    public static float KERNEL_RADIUS = 0.08f; // Spacing between particles, used to calculate pressure
+    public static float KERNEL_RADIUS = 0.1f; // Spacing between particles, used to calculate pressure
     public static float SPRING_STIFFNESS = 0f; // Spring stiffness
     public static float PLASTICITY = 0.5f; // alpha
     public static float YIELD_RATIO = 0.25f; // gamma
