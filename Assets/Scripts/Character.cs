@@ -26,6 +26,12 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (rb.bodyType == RigidbodyType2D.Kinematic)
+        {
+            TrackMouseEyesOnly();
+            return;
+        }
+
         bool isGrounded = bc.IsTouchingLayers(LayerMask.GetMask("Ground"));
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
@@ -44,31 +50,31 @@ public class Character : MonoBehaviour
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
         }
 
-        // Get mouse position in world space
+        TrackMouseEyesOnly();
+    }
+
+    void TrackMouseEyesOnly()
+    {
         Vector3 mouseScreenPosition = Input.mousePosition;
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
         mouseWorldPosition.z = 0;
-        
-        // Calculate the direction from the character to the mouse position
+
         Vector3 bodyToMouse = (mouseWorldPosition - body.position).normalized;
-        // Move the pupils towards the mouse within the iris, without rotating them
-        float maxPupilOffset = 0.2f; // Adjust as needed for how far the pupil can move
+        float maxPupilOffset = 0.2f;
         Vector3 iris1Center = body.position + new Vector3(-0.8f, 0.0f, 0.0f);
         Vector3 iris2Center = body.position + new Vector3(0.8f, 0.0f, 0.0f);
 
-        float maxIrisOffset = 0.2f; // Adjust as needed for how far the iris can move
-        // Move the iris towards the mouse within the body, without rotating them
+        float maxIrisOffset = 0.2f;
         Vector3 iris1Offset = Vector3.ClampMagnitude(mouseWorldPosition - iris1Center, maxIrisOffset);
         Vector3 iris2Offset = Vector3.ClampMagnitude(mouseWorldPosition - iris2Center, maxIrisOffset);
 
-        // Position iris directly with clamped offset
-        iris1.position = new Vector3(iris1Center.x + iris1Offset.x, iris1Center.y + iris1Offset.y, iris1Center.z);
-        iris2.position = new Vector3(iris2Center.x + iris2Offset.x, iris2Center.y + iris2Offset.y, iris2Center.z);
+        iris1.position = new Vector3(iris1Center.x + iris1Offset.x, iris1Center.y, iris1Center.z);
+        iris2.position = new Vector3(iris2Center.x + iris2Offset.x, iris2Center.y, iris2Center.z);
 
         Vector3 pupil1Offset = Vector3.ClampMagnitude(mouseWorldPosition - iris1.position, maxPupilOffset);
         Vector3 pupil2Offset = Vector3.ClampMagnitude(mouseWorldPosition - iris2.position, maxPupilOffset);
 
         pupil1.position = iris1.position + pupil1Offset;
         pupil2.position = iris2.position + pupil2Offset;
-    }
+}
 }
