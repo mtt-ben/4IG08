@@ -67,7 +67,8 @@ public class Particle : MonoBehaviour
         grid_y = (int)((position.y - Y_MIN) / (Y_MAX - Y_MIN) * GRID_SIZE_Y);
 
         // Update the particle's transform position
-        transform.position = position;
+        if (!float.IsNaN(position.x) && !float.IsNaN(position.y))
+            transform.position = position;
     }
     
     // Collision detection returns (collided?, normal, penetration)

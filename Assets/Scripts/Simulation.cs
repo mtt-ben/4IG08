@@ -184,4 +184,17 @@ public class Simulation : MonoBehaviour
             p.UpdateState();
         }
     }
+
+    public void AddParticle(Particle p)
+    {
+        particles.Add(p);
+
+        int gridX = Mathf.Clamp((int)((p.position.x - x_min) / (x_max - x_min) * grid_size_x), 0, grid_size_x - 1);
+        int gridY = Mathf.Clamp((int)((p.position.y - y_min) / (y_max - y_min) * grid_size_y), 0, grid_size_y - 1);
+
+        grid[gridX, gridY].Add(p);
+
+        p.grid_x = gridX;
+        p.grid_y = gridY;
+    }
 }

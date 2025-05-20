@@ -11,6 +11,9 @@ public class Character : MonoBehaviour
     public Transform pupil1;
     public Transform pupil2;
     public Transform visual;
+    public GameObject particleObject;
+    private Simulation sim;
+    private bool isPropulsing = false;
 
     void Start()
     {
@@ -21,6 +24,8 @@ public class Character : MonoBehaviour
         iris2 = body.Find("Iris2");
         pupil1 = iris1.Find("Pupil1");
         pupil2 = iris2.Find("Pupil2");
+        sim = FindObjectOfType<Simulation>();
+        isPropulsing = false;
     }
 
     // Update is called once per frame
@@ -28,32 +33,62 @@ public class Character : MonoBehaviour
     {
         if (rb.bodyType == RigidbodyType2D.Kinematic)
         {
-            TrackMouseEyesOnly();
+            EyesTrackMouse();
             return;
         }
 
         bool isGrounded = bc.IsTouchingLayers(LayerMask.GetMask("Ground"));
+    
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 20);
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) && !isPropulsing)
         {
             rb.linearVelocity = new Vector2(10, rb.linearVelocity.y);
         }
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A) && !isPropulsing)
         {
             rb.linearVelocity = new Vector2(-10, rb.linearVelocity.y);
         }
-        else
+        if ((Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))&& !isPropulsing)
         {
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
         }
 
-        TrackMouseEyesOnly();
+
+        EyesTrackMouse();
+        // Send water particles if mouse is pressed
+        if (Input.GetMouseButton(0))
+        {
+            isPropulsing = true;
+            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouseWorldPos.z = 0;
+
+            Vector2 direction = (mouseWorldPos - body.position).normalized;
+            Vector3 spawnPos = body.position + (Vector3)direction;
+
+            GameObject particleGO = Instantiate(particleObject, spawnPos, Quaternion.identity);
+            Particle p = particleGO.GetComponent<Particle>();
+
+            if (p != null)
+            {
+                // Add particle to simulation
+                p.velocity = direction * 10f;
+                p.inPlayer = true;
+                sim.AddParticle(p);
+
+                // Boost player in the opposite direction
+                float boostStrength = 0.5f;
+                rb.AddForce(-direction * boostStrength, ForceMode2D.Impulse);
+            }
+        }
+        else {
+            isPropulsing = false;
+        }
     }
 
-    void TrackMouseEyesOnly()
+    void EyesTrackMouse()
     {
         Vector3 mouseScreenPosition = Input.mousePosition;
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
@@ -76,5 +111,5 @@ public class Character : MonoBehaviour
 
         pupil1.position = iris1.position + pupil1Offset;
         pupil2.position = iris2.position + pupil2Offset;
-}
+    }
 }

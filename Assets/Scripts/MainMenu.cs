@@ -10,12 +10,11 @@ public class MainMenu : MonoBehaviour
 
     public void OpenSettings()
     {
-        Debug.Log("Ouverture des paramètres...");
+        SceneManager.LoadScene("Settings");
     }
 
     public void QuitGame()
     {
-        Debug.Log("Quitter le jeu");
         Application.Quit();
 
 #if UNITY_EDITOR
