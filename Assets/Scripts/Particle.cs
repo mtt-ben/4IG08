@@ -34,6 +34,7 @@ public class Particle : MonoBehaviour
     public float LinViscosity => inPlayer ? INPLAYER_LIN_VISCOSITY : LIN_VISCOSITY;
     public float QuadViscosity => inPlayer ? INPLAYER_QUAD_VISCOSITY : QUAD_VISCOSITY;
     public float MaxPressure => inPlayer ? INPLAYER_MAX_PRESSURE : MAX_PRESSURE;
+    public float mass = 1;
     public float pressure = 0f;
 
     // List or set of neighboring particles
@@ -41,6 +42,8 @@ public class Particle : MonoBehaviour
 
     public bool showNeighbors = false;
     public bool showVelocity = false;
+    public float KernelRadiusSolid = 0.08f; // Radius for solid collision detection
+
 
     void Start()
     {
@@ -81,20 +84,20 @@ public class Particle : MonoBehaviour
     // Collision detection returns (collided?, normal, penetration)
     public (bool, Vector2, float) CheckCollision()
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(position, KernelRadius);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(position, KernelRadiusSolid);
 
         foreach (Collider2D hit in hits)
         {
-            if (hit.gameObject != this.gameObject)
+            if (hit.gameObject != this.gameObject && hit.gameObject.layer != LayerMask.NameToLayer("Water"))
             {
                 Vector2 closestPoint = hit.ClosestPoint(position);
                 Vector2 diff = position - closestPoint;
                 float dist = diff.magnitude;
 
-                if (dist < KernelRadius && dist > 0f)  // Avoid division by zero
+                if (dist < KernelRadiusSolid && dist > 0f)  // Avoid division by zero
                 {
                     Vector2 normal = diff.normalized;
-                    float penetration = KernelRadius - dist;
+                    float penetration = KernelRadiusSolid - dist;
                     return (true, normal, penetration);
                 }
             }
@@ -117,32 +120,47 @@ public class Particle : MonoBehaviour
 
     public void drawVelocity()
     {
-        Debug.DrawLine(position, position + velocity, Color.red);
+        // Visualize velocity using Gizmos (draw a red arrow from position in the direction of velocity)
+        Gizmos.color = Color.red;
+        Vector3 start = position;
+        Vector3 end = position + velocity;
+        Gizmos.DrawLine(start, end);
+
+        // Optionally, draw an arrowhead
+        if (velocity.magnitude > 0.01f)
+        {
+            Vector3 direction = (end - start).normalized;
+            float arrowHeadLength = 0.05f;
+            float arrowHeadAngle = 20.0f;
+
+            Vector3 right = Quaternion.Euler(0, 0, arrowHeadAngle) * -direction;
+            Vector3 left = Quaternion.Euler(0, 0, -arrowHeadAngle) * -direction;
+            Gizmos.DrawLine(end, end + right * arrowHeadLength);
+            Gizmos.DrawLine(end, end + left * arrowHeadLength);
+        }
     }
 
-    public void drawNeighbors()
+    // Visualize neighbors using Gizmos (draw a green circle around the particle)
+    void OnDrawGizmosSelected()
     {
         if (showNeighbors)
         {
-            SpriteRenderer sr = GetComponent<SpriteRenderer>();
-            if (sr != null)
+            Gizmos.color = Color.green;
+            int segments = 32;
+            float radius = KernelRadius;
+            Vector3 center = (Vector3)position;
+            float angleStep = 2 * Mathf.PI / segments;
+            Vector3 prevPoint = center + new Vector3(Mathf.Cos(0), Mathf.Sin(0), 0) * radius;
+            for (int i = 1; i <= segments; i++)
             {
-                // Draw a circle around the particle using Debug.DrawLine
-                int segments = 32;
-                float radius = KernelRadius;
-                Vector2 center = position;
-                float angleStep = 2 * Mathf.PI / segments;
-                for (int i = 0; i < segments; i++)
-                {
-                    float angle1 = i * angleStep;
-                    float angle2 = (i + 1) * angleStep;
-                    Vector3 point1 = center + new Vector2(Mathf.Cos(angle1), Mathf.Sin(angle1)) * radius;
-                    Vector3 point2 = center + new Vector2(Mathf.Cos(angle2), Mathf.Sin(angle2)) * radius;
-                    Debug.DrawLine(point1, point2, Color.green);
-                }
+                float angle = i * angleStep;
+                Vector3 nextPoint = center + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * radius;
+                Gizmos.DrawLine(prevPoint, nextPoint);
+                prevPoint = nextPoint;
             }
         }
     }
+
     public void drawDensity()
     {
         // Change the color of the SpriteRenderer based on density
@@ -159,7 +177,5 @@ public class Particle : MonoBehaviour
 
     void Update()
     {
-        if (showVelocity) drawVelocity();   
-        if (showNeighbors) drawNeighbors();
     }
 }

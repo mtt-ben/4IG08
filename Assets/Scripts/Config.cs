@@ -7,17 +7,17 @@ public class Config : MonoBehaviour
     public static float G = 0.5f; // Acceleration of gravity
     public static int GRID_SIZE_X = 60; // Number of grid cells in the x direction
     public static int GRID_SIZE_Y = 30; // Number of grid cells in the y direction
-    public static float X_MIN = -7f; // Minimum x coordinate for the grid
-    public static float X_MAX = 17f; // Maximum x coordinate for the grid
-    public static float Y_MIN = -5f; // Minimum y coordinate for the grid
-    public static float Y_MAX = 6f; // Maximum y coordinate for the grid
+    public static float X_MIN = -12f; // Minimum x coordinate for the grid
+    public static float X_MAX = 13f; // Maximum x coordinate for the grid
+    public static float Y_MIN = -6f; // Minimum y coordinate for the grid
+    public static float Y_MAX = 4f; // Maximum y coordinate for the grid
 
     // Two set of parameters are necessary for the game
     // Normal water parameters
     public static float REST_DENSITY = 3.0f; // Default density, will be compared to local density to calculate pressure
     public static float STIFFNESS = 0.1f; // Pressure factor
     public static float STIFFNESS_NEAR = STIFFNESS * 10f; // Near pressure factor, pressure when particles are close to each other
-    public static float KERNEL_RADIUS = 0.1f; // Spacing between particles, used to calculate pressure
+    public static float KERNEL_RADIUS = 1f; // Spacing between particles, used to calculate pressure
     public static float SPRING_STIFFNESS = 0f; // Spring stiffness
     public static float PLASTICITY = 0.5f; // alpha
     public static float YIELD_RATIO = 0.25f; // gamma

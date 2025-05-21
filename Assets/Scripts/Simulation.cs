@@ -18,7 +18,11 @@ public class Simulation : MonoBehaviour
     public float x_max = X_MAX; // The maximum x coordinate for the grid
     public float y_min = Y_MIN; // The minimum y coordinate for the grid
     public float y_max = Y_MAX; // The maximum y coordinate for the grid
+    public float DT = Config.DT; // The time step for the simulation
+
     public bool showVelocity = false;
+    public bool isPauses = true;
+    
     
 
     void Start()
@@ -37,30 +41,41 @@ public class Simulation : MonoBehaviour
 
 
     // NEED TO IMPLEMENT THE KERNEL FUNCTIONS
+
+    float cubicSpline(float r)
+    {
+        if(0<=r && r<1) return 1 - 3 / 2 * r * r + 3/4 * r * r * r;
+        else if(1<=r && r<2) return 4 - 6 * r + 3 * r * r;
+        else return 0;
+    }
+
+    float cubicSplineGradient(float r)
+    {
+        if(0<=r && r<1) return -3 * r + 9/4 * r * r;
+        else if(1<=r && r<2) return -3/4 * (2-r) * (2-r);
+        else return 0;
+    }
+
     float Kernel(Vector2 p, Vector2 q)
     {
-        float h = KERNEL_RADIUS;
-        Vector2 rVec = p - q;
-        float r2 = rVec.sqrMagnitude;
-
-        if (r2 >= h * h)
-            return 0f;
-
-        float coef = 4f / (Mathf.PI * Mathf.Pow(h, 8));
-        return coef * Mathf.Pow(h * h - r2, 3);
+        float alpha = 10 / (7 * Mathf.PI * Mathf.Pow(KERNEL_RADIUS, 3));
+        return alpha * cubicSpline(Vector2.Distance(p, q) / KERNEL_RADIUS);
     }
 
     Vector2 gradientKernel(Vector2 p, Vector2 q)
     {
-        float h = KERNEL_RADIUS;
-        Vector2 rVec = p - q;
-        float r2 = rVec.sqrMagnitude;
+        float alpha = 10 / (7 * Mathf.PI * Mathf.Pow(KERNEL_RADIUS, 3));
+        float r = Vector2.Distance(p, q);
+        if (r < 0.0001f) return Vector2.zero; // Avoid division by zero
+        return alpha / KERNEL_RADIUS * (p - q) / r * cubicSplineGradient(r / KERNEL_RADIUS);
+    }
 
-        if (r2 == 0f || r2 >= h * h)
-            return Vector2.zero;
-
-        float coef = -24f / (Mathf.PI * Mathf.Pow(h, 8));
-        return coef * Mathf.Pow(h * h - r2, 2) * rVec;
+    Vector2 gradientKernel(Vector2 rij)
+    {
+        float r = rij.magnitude;
+        if (r < 0.0001f) return Vector2.zero; // Avoid division by zero
+        float alpha = 10 / (7 * Mathf.PI * Mathf.Pow(KERNEL_RADIUS, 3));
+        return alpha / KERNEL_RADIUS * rij / r * cubicSplineGradient(r / KERNEL_RADIUS);
     }
 
 
@@ -125,82 +140,6 @@ public class Simulation : MonoBehaviour
         }
     }
 
-    void DoubleDensityRelaxation()
-    /*
-     * Algorithm 2 : Double Density Relaxation
-     */
-    {
-        foreach (Particle p in particles)
-        {
-            list neighbors = new();
-            f_list neighborUnitX = new();
-            f_list neighborUnitY = new();
-            f_list neighborcloseness = new();
-
-            p.density = 0f;
-            p.density_near = 0f;
-
-            float grid_X = p.position.x / (x_max - x_min) * grid_size_x;
-            float grid_Y = p.position.y / (y_max - y_min) * grid_size_y;
-
-            foreach (Particle q in p.neighbors)
-            {
-                float r = Vector2.Distance(p.position, q.position);
-                if (r < p.KernelRadius)
-                {
-                    float closeness = 1 - r / p.KernelRadius;
-                    p.density += closeness * closeness;
-                    p.density_near += closeness * closeness * closeness;
-
-                    // Store neighbor information
-                    neighborUnitX.Add((q.position.x - p.position.x) / r);
-                    neighborUnitY.Add((q.position.y - p.position.y) / r);
-                    neighborcloseness.Add(closeness);
-                }
-            }
-
-            float pressure = p.Stiffness * (p.density - p.RestDensity);
-            float nearPressure = p.NearStiffness * p.density_near;
-
-            if (pressure > 1f) pressure = 1f;
-            if (nearPressure > 1f) nearPressure = 1f;
-
-            Vector2 disp = Vector2.zero;
-
-            for (int i = 0; i < neighbors.Count; i++)
-            {
-                float closeness = neighborcloseness[i];
-                float D = (pressure * closeness + nearPressure * closeness * closeness) / 2f;
-                float DX = D * neighborUnitX[i];
-                float DY = D * neighborUnitY[i];
-
-                // Apply displacement to the neighbor
-                neighbors[i].position += new Vector2(DX, DY);
-
-                // Apply displacement to the current particle
-                disp -= new Vector2(DX, DY);
-            }
-
-            // Update particle position
-            p.position += disp; // I DON'T LIKE MODIFICATING THE POSITION HERE
-        }
-    }
-
-    void SpringDisplacement()
-    /*
-     * Algorithm 3 : Spring Displacement
-     */
-    {
-
-    }
-
-    void SpringAdjustment()
-    /*
-     * Algorithm 4 : Spring Adjustment
-     */
-    {
-        // done in the springDisplacement function
-    }
 
     void ResolveCollisions()
     /*
@@ -217,13 +156,6 @@ public class Simulation : MonoBehaviour
         }
     }
 
-    void ViscosityImpulse()
-    /*
-     * Algorithm 5 : Viscosity Impulse
-     */
-    {
-
-    }
 
     void drawVelocity()
     {
@@ -232,6 +164,7 @@ public class Simulation : MonoBehaviour
             p.drawVelocity();
         }
     }
+
     void drawDensity()
     {
         foreach (Particle p in particles)
@@ -254,8 +187,8 @@ public class Simulation : MonoBehaviour
         foreach (Particle p in particles)
         {
             // EQUATION OF STATE
-            const float k = 0.04f;
-            p.pressure = p.density<0 ? k * (Mathf.Pow(p.RestDensity / p.density, 7f) - 1f):0f;
+            const float k = 0.01f;
+            p.pressure = p.density>0 ? k * (Mathf.Pow(p.density/p.RestDensity, 7f) - 1f):0f;
         }
     }
 
@@ -266,7 +199,7 @@ public class Simulation : MonoBehaviour
             p.density = 0f;
             foreach (Particle q in p.neighbors)
             {
-                p.density += Kernel(p.position, q.position);
+                p.density += q.mass * Kernel(p.position, q.position);
             }
         }
     }
@@ -278,36 +211,39 @@ public class Simulation : MonoBehaviour
             Vector2 pressureAcc = Vector2.zero;
             foreach (Particle q in p.neighbors)
             {
+                // Debug.Log("Gradient Kernel = "+ gradientKernel(p.position, q.position));
                 float coefficient = p.pressure / Mathf.Pow(p.density, 2) + q.pressure / Mathf.Pow(q.density, 2);
-                pressureAcc +=  coefficient * gradientKernel(p.position, q.position);
+                // Debug.Log("Coeff = "+ coefficient);
+                // Debug.Log("Pressure Acc p = "+ p.pressure);
+                // Debug.Log("Pressure Acc q = "+ q.pressure);
+                Vector2 rij = p.position - q.position;
+                pressureAcc += q.mass * coefficient * gradientKernel(rij);
             }
             p.acceleration += pressureAcc;
+            Debug.Log("Acceleration of particle : "+ p.acceleration);
         }
+        
     }
 
 
     // Algorithm 1 : Simulation Step
-    void Update()
+    void FixedUpdate()
     {
+        Debug.DrawLine(Vector3.zero, Vector3.right * 2f, Color.green);
+
+        if (isPauses) return;
         // Update the grid and neighbors
         buildNeighbors();
         computeDensity();
         // GRAVITY
-        applyBodyForce();
+        // applyBodyForce();
 
         // // PRESSURE
-        // computePressure();
-        // applyPressure();
+        computePressure();
+        applyPressure();
 
         // // VISCOSITY
         // ViscosityImpulse();
-
-
-
-        // SPRING 
-        // SpringAdjustment();
-        // SpringDisplacement();
-        // DoubleDensityRelaxation();
 
 
 
