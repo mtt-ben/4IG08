@@ -37,9 +37,11 @@ public class Character : MonoBehaviour
             return;
         }
 
-        bool isGrounded = bc.IsTouchingLayers(LayerMask.GetMask("Ground"));
+        RaycastHit2D hit = Physics2D.BoxCast(bc.bounds.center, bc.bounds.size, 0f, Vector2.down, 0.1f, LayerMask.GetMask("Ground"));
+        bool isGrounded = hit.collider != null;
+        bool isTouchingWall = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, 0.1f, LayerMask.GetMask("Ground"));
     
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !isTouchingWall)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 20);
         }
@@ -50,6 +52,10 @@ public class Character : MonoBehaviour
         else if (Input.GetKey(KeyCode.A) && !isPropulsing)
         {
             rb.linearVelocity = new Vector2(-10, rb.linearVelocity.y);
+        }
+        if (Input.GetKey(KeyCode.S) && !isPropulsing)
+        {
+            rb.AddForce(Vector2.down * 20f, ForceMode2D.Force);
         }
         if ((Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))&& !isPropulsing)
         {
