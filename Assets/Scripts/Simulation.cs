@@ -222,7 +222,6 @@ public class Simulation : MonoBehaviour
             p.acceleration += pressureAcc;
             Debug.Log("Acceleration of particle : "+ p.acceleration);
         }
-        
     }
 
 
@@ -236,7 +235,7 @@ public class Simulation : MonoBehaviour
         buildNeighbors();
         computeDensity();
         // GRAVITY
-        // applyBodyForce();
+        applyBodyForce();
 
         // // PRESSURE
         computePressure();
