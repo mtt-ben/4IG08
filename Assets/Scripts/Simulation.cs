@@ -5,7 +5,9 @@ using list = System.Collections.Generic.List<Particle>;
 using f_list = System.Collections.Generic.List<float>;
 
 using static Config;
+using static SmoothingKernel;
 using NUnit.Framework.Constraints;
+
 public class Simulation : MonoBehaviour
 {
     public GameObject Player;
@@ -19,7 +21,7 @@ public class Simulation : MonoBehaviour
     public float y_min = Y_MIN; // The minimum y coordinate for the grid
     public float y_max = Y_MAX; // The maximum y coordinate for the grid
     public float DT = Config.DT; // The time step for the simulation
-
+    public SmoothingKernel kernel = new SmoothingKernel();  
     public bool showVelocity = false;
     public bool isPauses = true;
     
@@ -42,41 +44,7 @@ public class Simulation : MonoBehaviour
 
     // NEED TO IMPLEMENT THE KERNEL FUNCTIONS
 
-    float cubicSpline(float r)
-    {
-        if(0<=r && r<1) return 1 - 3 / 2 * r * r + 3/4 * r * r * r;
-        else if(1<=r && r<2) return 4 - 6 * r + 3 * r * r;
-        else return 0;
-    }
-
-    float cubicSplineGradient(float r)
-    {
-        if(0<=r && r<1) return -3 * r + 9/4 * r * r;
-        else if(1<=r && r<2) return -3/4 * (2-r) * (2-r);
-        else return 0;
-    }
-
-    float Kernel(Vector2 p, Vector2 q)
-    {
-        float alpha = 10 / (7 * Mathf.PI * Mathf.Pow(KERNEL_RADIUS, 3));
-        return alpha * cubicSpline(Vector2.Distance(p, q) / KERNEL_RADIUS);
-    }
-
-    Vector2 gradientKernel(Vector2 p, Vector2 q)
-    {
-        float alpha = 10 / (7 * Mathf.PI * Mathf.Pow(KERNEL_RADIUS, 3));
-        float r = Vector2.Distance(p, q);
-        if (r < 0.0001f) return Vector2.zero; // Avoid division by zero
-        return alpha / KERNEL_RADIUS * (p - q) / r * cubicSplineGradient(r / KERNEL_RADIUS);
-    }
-
-    Vector2 gradientKernel(Vector2 rij)
-    {
-        float r = rij.magnitude;
-        if (r < 0.0001f) return Vector2.zero; // Avoid division by zero
-        float alpha = 10 / (7 * Mathf.PI * Mathf.Pow(KERNEL_RADIUS, 3));
-        return alpha / KERNEL_RADIUS * rij / r * cubicSplineGradient(r / KERNEL_RADIUS);
-    }
+    
 
 
     void updatePosition()
@@ -90,10 +58,8 @@ public class Simulation : MonoBehaviour
 
     void updateVelocity()
     {
-        foreach (Particle p in particles)
-        {
+        foreach (Particle p in particles) 
             p.velocity += p.acceleration * DT;
-        }
     }
 
     void updateGrid()
@@ -133,13 +99,12 @@ public class Simulation : MonoBehaviour
                     {
                         if (p == q) continue;
                         float r = Vector2.Distance(p.position, q.position);
-                        if (r < p.KernelRadius) p.neighbors.Add(q);
+                        if (r < kernel.supportRadius) p.neighbors.Add(q);
                     }
                 }
             }
         }
     }
-
 
     void ResolveCollisions()
     /*
@@ -155,7 +120,6 @@ public class Simulation : MonoBehaviour
             }
         }
     }
-
 
     void drawVelocity()
     {
@@ -182,13 +146,18 @@ public class Simulation : MonoBehaviour
         }
     }
 
+    float equationOfState(float d, float d0, float k, float gamma=7f)
+    {
+        return k*(Mathf.Pow(d/d0,gamma)-1f);
+    }
+
     void computePressure()
     {
         foreach (Particle p in particles)
         {
-            // EQUATION OF STATE
+            // Use the equation of state (EOS) function
             const float k = 0.01f;
-            p.pressure = p.density>0 ? k * (Mathf.Pow(p.density/p.RestDensity, 7f) - 1f):0f;
+            p.pressure = p.density > 0 ? equationOfState(p.density, p.RestDensity, k) : 0f;
         }
     }
 
@@ -199,7 +168,7 @@ public class Simulation : MonoBehaviour
             p.density = 0f;
             foreach (Particle q in p.neighbors)
             {
-                p.density += q.mass * Kernel(p.position, q.position);
+                p.density += q.mass * kernel.W(p.position-q.position);
             }
         }
     }
@@ -211,15 +180,11 @@ public class Simulation : MonoBehaviour
             Vector2 pressureAcc = Vector2.zero;
             foreach (Particle q in p.neighbors)
             {
-                // Debug.Log("Gradient Kernel = "+ gradientKernel(p.position, q.position));
                 float coefficient = p.pressure / Mathf.Pow(p.density, 2) + q.pressure / Mathf.Pow(q.density, 2);
-                // Debug.Log("Coeff = "+ coefficient);
-                // Debug.Log("Pressure Acc p = "+ p.pressure);
-                // Debug.Log("Pressure Acc q = "+ q.pressure);
                 Vector2 rij = p.position - q.position;
-                pressureAcc += q.mass * coefficient * gradientKernel(rij);
+                pressureAcc += q.mass * coefficient * kernel.grad_W(rij);
             }
-            p.acceleration += pressureAcc;
+            p.acceleration -= pressureAcc;
             Debug.Log("Acceleration of particle : "+ p.acceleration);
         }
     }
@@ -228,12 +193,16 @@ public class Simulation : MonoBehaviour
     // Algorithm 1 : Simulation Step
     void FixedUpdate()
     {
-        Debug.DrawLine(Vector3.zero, Vector3.right * 2f, Color.green);
-
         if (isPauses) return;
+
         // Update the grid and neighbors
         buildNeighbors();
         computeDensity();
+
+        foreach (Particle p in particles)
+        {
+            p.acceleration = Vector2.zero;
+        }
         // GRAVITY
         applyBodyForce();
 
@@ -241,7 +210,7 @@ public class Simulation : MonoBehaviour
         computePressure();
         applyPressure();
 
-        // // VISCOSITY
+        // VISCOSITY
         // ViscosityImpulse();
 
 
@@ -253,7 +222,7 @@ public class Simulation : MonoBehaviour
 
         if (showVelocity) drawVelocity();
         drawDensity();
-        // Debug.Log("Update is running");
-        
+        drawVelocity();
+
     }
 }

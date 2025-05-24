@@ -120,23 +120,9 @@ public class Particle : MonoBehaviour
 
     public void drawVelocity()
     {
-        // Visualize velocity using Gizmos (draw a red arrow from position in the direction of velocity)
-        Gizmos.color = Color.red;
-        Vector3 start = position;
-        Vector3 end = position + velocity;
-        Gizmos.DrawLine(start, end);
-
-        // Optionally, draw an arrowhead
-        if (velocity.magnitude > 0.01f)
+        if (showVelocity)
         {
-            Vector3 direction = (end - start).normalized;
-            float arrowHeadLength = 0.05f;
-            float arrowHeadAngle = 20.0f;
-
-            Vector3 right = Quaternion.Euler(0, 0, arrowHeadAngle) * -direction;
-            Vector3 left = Quaternion.Euler(0, 0, -arrowHeadAngle) * -direction;
-            Gizmos.DrawLine(end, end + right * arrowHeadLength);
-            Gizmos.DrawLine(end, end + left * arrowHeadLength);
+            Debug.DrawLine(position, position + velocity, Color.yellow, 0.1f, false);
         }
     }
 
@@ -177,5 +163,6 @@ public class Particle : MonoBehaviour
 
     void Update()
     {
+        
     }
 }
