@@ -10,35 +10,22 @@ public class Particle : MonoBehaviour
     public Vector2 velocity = Vector2.zero;
     public Vector2 acceleration = Vector2.zero;
     public Vector2 position;
-    public Vector2 prevPosition;
-    public List<(float, float)> springs;
-    public bool inPlayer;
     public int grid_x = 0;
     public int grid_y = 0;
     public float density = 0f;
-    public float density_near = 0f;
 
     // Collision-related
     private CircleCollider2D circleCollider;
-    public float damping = 0.8f;  // Damping factor for collision velocity response
+    public float damping = 0.9f;  // Damping factor for collision velocity response
 
     // Particle properties
-    public float RestDensity => inPlayer ? INPLAYER_REST_DENSITY : REST_DENSITY;
-    public float Stiffness => inPlayer ? INPLAYER_STIFFNESS : STIFFNESS;
-    public float NearStiffness => inPlayer ? INPLAYER_STIFFNESS_NEAR : STIFFNESS_NEAR;
-    public float KernelRadius => inPlayer ? INPLAYER_KERNEL_RADIUS : KERNEL_RADIUS;
-    public float SpringStiffness => inPlayer ? INPLAYER_SPRING_STIFFNESS : SPRING_STIFFNESS;
-    public float PLASTICITY => inPlayer ? INPLAYER_PLASTICITY : PLASTICITY;
-    public float YIELD_RATIO => inPlayer ? INPLAYER_YIELD_RATIO : YIELD_RATIO;
-    public float MinDistRatio => inPlayer ? INPLAYER_MIN_DIST_RATIO : MIN_DIST_RATIO;
-    public float LinViscosity => inPlayer ? INPLAYER_LIN_VISCOSITY : LIN_VISCOSITY;
-    public float QuadViscosity => inPlayer ? INPLAYER_QUAD_VISCOSITY : QUAD_VISCOSITY;
-    public float MaxPressure => inPlayer ? INPLAYER_MAX_PRESSURE : MAX_PRESSURE;
+    public float RestDensity => REST_DENSITY;
+    public float KernelRadius => KERNEL_RADIUS;
     public float mass = 1;
     public float pressure = 0f;
 
     // List or set of neighboring particles
-    public List<Particle> neighbors = new List<Particle>();
+    public List<Particle> neighbors = new();
 
     public bool showNeighbors = false;
     public bool showVelocity = false;
@@ -48,9 +35,6 @@ public class Particle : MonoBehaviour
     void Start()
     {
         position = transform.position;
-        prevPosition = position;
-        springs = new List<(float, float)>();
-        inPlayer = false;
         grid_x = (int)((position.x - X_MIN) / (X_MAX - X_MIN) * GRID_SIZE_X);
         grid_y = (int)((position.y - Y_MIN) / (Y_MAX - Y_MIN) * GRID_SIZE_Y);
 
@@ -76,6 +60,12 @@ public class Particle : MonoBehaviour
         // Update the grid position
         grid_x = (int)((position.x - X_MIN) / (X_MAX - X_MIN) * GRID_SIZE_X);
         grid_y = (int)((position.y - Y_MIN) / (Y_MAX - Y_MIN) * GRID_SIZE_Y);
+
+        // Update velocity and position
+        velocity += acceleration * DT; // Update velocity with acceleration
+        velocity = Vector2.ClampMagnitude(velocity, 9f); // Adjust the max speed as needed
+        position += velocity * DT; // Update position with velocity
+        acceleration = Vector2.zero; // Reset acceleration after applying it
 
         // Update the particle's transform position
         transform.position = position;
@@ -108,17 +98,12 @@ public class Particle : MonoBehaviour
     // Handle collision response: reflect velocity and resolve penetration
     public void HandleCollision(Vector2 normal, float penetration)
     {
-        velocity = ReflectVelocity(velocity, normal); //* damping;
+        velocity = Vector2.Reflect(velocity, normal) * damping;
         position += normal * penetration;
         UpdateState();
     }
 
-    private Vector2 ReflectVelocity(Vector2 velocity, Vector2 normal)
-    {
-        return Vector2.Reflect(velocity, normal);
-    }
-
-    public void drawVelocity()
+    public void DrawVelocity()
     {
         if (showVelocity)
         {
@@ -147,11 +132,10 @@ public class Particle : MonoBehaviour
         }
     }
 
-    public void drawDensity()
+    public void DrawDensity()
     {
         // Change the color of the SpriteRenderer based on density
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        if (sr != null)
+        if (TryGetComponent<SpriteRenderer>(out var sr))
         {
             // Normalize density for color mapping (adjust maxDensity as needed)
             float maxDensity = 10f;
@@ -159,10 +143,5 @@ public class Particle : MonoBehaviour
             // Color from blue (low density) to red (high density)
             sr.color = Color.Lerp(Color.blue, Color.red, t);
         }
-    }
-
-    void Update()
-    {
-        
     }
 }

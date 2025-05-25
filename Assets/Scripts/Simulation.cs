@@ -21,10 +21,9 @@ public class Simulation : MonoBehaviour
     public float y_min = Y_MIN; // The minimum y coordinate for the grid
     public float y_max = Y_MAX; // The maximum y coordinate for the grid
     public float DT = Config.DT; // The time step for the simulation
-    public SmoothingKernel kernel = new SmoothingKernel();  
+    public SmoothingKernel kernel = new();
     public bool showVelocity = false;
     public bool isPauses = true;
-    
     
 
     void Start()
@@ -44,25 +43,8 @@ public class Simulation : MonoBehaviour
 
     // NEED TO IMPLEMENT THE KERNEL FUNCTIONS
 
-    
 
-
-    void updatePosition()
-    {
-        foreach (Particle p in particles)
-        {
-            p.prevPosition = p.position;
-            p.position += p.velocity * DT;
-        }
-    }
-
-    void updateVelocity()
-    {
-        foreach (Particle p in particles) 
-            p.velocity += p.acceleration * DT;
-    }
-
-    void updateGrid()
+    void UpdateGrid()
     {
         // Build the grid
         for (int i = 0; i < grid_size_x; i++)
@@ -82,9 +64,9 @@ public class Simulation : MonoBehaviour
         }
     }
 
-    void buildNeighbors()
+    void BuildNeighbors()
     {
-        updateGrid();
+        UpdateGrid();
         
         foreach (Particle p in particles)
         {
@@ -107,9 +89,6 @@ public class Simulation : MonoBehaviour
     }
 
     void ResolveCollisions()
-    /*
-     * Algorithm 6 : Particle-body interactions
-     */
     {
         foreach (Particle p in particles)
         {
@@ -121,51 +100,52 @@ public class Simulation : MonoBehaviour
         }
     }
 
-    void drawVelocity()
+    void DrawVelocity()
     {
         foreach(Particle p in particles)
         {
-            p.drawVelocity();
+            p.DrawVelocity();
         }
     }
 
-    void drawDensity()
+    void DrawDensity()
     {
         foreach (Particle p in particles)
         {
-            p.drawDensity();
+            p.DrawDensity();
         }
     }
 
-    void applyBodyForce()
+    void ApplyBodyForce()
     {
         // Apply body force to the particles
         foreach (Particle p in particles)
         {
-            p.acceleration += new Vector2(0, -G);
+            p.acceleration += new Vector2(0, -G); // Gravity force
         }
     }
 
-    float equationOfState(float d, float d0, float k, float gamma=7f)
+    float EquationOfState(float d, float d0, float k, float gamma=7f)
     {
-        return k*(Mathf.Pow(d/d0,gamma)-1f);
+        return k * (Mathf.Pow(d/d0, gamma) - 1f);
     }
 
-    void computePressure()
+    void ComputePressure()
     {
         foreach (Particle p in particles)
         {
             // Use the equation of state (EOS) function
             const float k = 0.01f;
-            p.pressure = p.density > 0 ? equationOfState(p.density, p.RestDensity, k) : 0f;
+            p.pressure = p.density > 0 ? EquationOfState(p.density, p.RestDensity, k) : 0f;
+            p.pressure = p.pressure < 0 ? 0f : p.pressure; // Ensure pressure is non-negative
         }
     }
 
-    void computeDensity()
+    void ComputeDensity()
     {
         foreach (Particle p in particles)
         {
-            p.density = 0f;
+            p.density = p.mass * 1f; // Reset density to the mass of the particle at its position
             foreach (Particle q in p.neighbors)
             {
                 p.density += q.mass * kernel.W(p.position-q.position);
@@ -173,7 +153,7 @@ public class Simulation : MonoBehaviour
         }
     }
 
-    void applyPressure()
+    void ApplyPressure()
     {
         foreach (Particle p in particles)
         {
@@ -185,44 +165,31 @@ public class Simulation : MonoBehaviour
                 pressureAcc += q.mass * coefficient * kernel.grad_W(rij);
             }
             p.acceleration -= pressureAcc;
-            Debug.Log("Acceleration of particle : "+ p.acceleration);
         }
     }
 
 
     // Algorithm 1 : Simulation Step
-    void FixedUpdate()
+    void LateUpdate()
     {
         if (isPauses) return;
 
         // Update the grid and neighbors
-        buildNeighbors();
-        computeDensity();
+        BuildNeighbors();
+        ComputeDensity();
 
-        foreach (Particle p in particles)
-        {
-            p.acceleration = Vector2.zero;
-        }
         // GRAVITY
-        applyBodyForce();
+        // ApplyBodyForce();
 
-        // // PRESSURE
-        computePressure();
-        applyPressure();
+        // PRESSURE
+        ComputePressure();
+        ApplyPressure();
 
-        // VISCOSITY
-        // ViscosityImpulse();
-
-
-
-        updateVelocity();
-        updatePosition();
         ResolveCollisions();
         foreach (Particle p in particles) p.UpdateState();
 
-        if (showVelocity) drawVelocity();
-        drawDensity();
-        drawVelocity();
-
+        if (showVelocity) DrawVelocity();
+        DrawDensity();
+        DrawVelocity();
     }
 }
