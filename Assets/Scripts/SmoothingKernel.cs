@@ -5,9 +5,9 @@ using static Config;
 
 public class SmoothingKernel
 {
-    public float smoothingLen = 1;
-    public float supportRadius = KERNEL_RADIUS;
-    public float alpha = 10 / (7 * Mathf.PI * Mathf.Pow(KERNEL_RADIUS, 3));
+    public float smoothingLen = KERNEL_RADIUS;
+    public float supportRadius = 2*KERNEL_RADIUS;
+    public float alpha = 10 / (7 * Mathf.PI * Mathf.Pow(KERNEL_RADIUS,2));
 
     public SmoothingKernel() { }
 

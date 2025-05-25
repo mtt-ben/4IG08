@@ -16,7 +16,7 @@ public class Particle : MonoBehaviour
 
     // Collision-related
     private CircleCollider2D circleCollider;
-    public float damping = 0.9f;  // Damping factor for collision velocity response
+    public float damping = 0.8f;  // Damping factor for collision velocity response
 
     // Particle properties
     public float RestDensity => REST_DENSITY;
@@ -118,14 +118,13 @@ public class Particle : MonoBehaviour
         {
             Gizmos.color = Color.green;
             int segments = 32;
-            float radius = KernelRadius;
             Vector3 center = (Vector3)position;
             float angleStep = 2 * Mathf.PI / segments;
-            Vector3 prevPoint = center + new Vector3(Mathf.Cos(0), Mathf.Sin(0), 0) * radius;
+            Vector3 prevPoint = center + new Vector3(Mathf.Cos(0), Mathf.Sin(0), 0) * KernelRadius;
             for (int i = 1; i <= segments; i++)
             {
                 float angle = i * angleStep;
-                Vector3 nextPoint = center + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * radius;
+                Vector3 nextPoint = center + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * KernelRadius;
                 Gizmos.DrawLine(prevPoint, nextPoint);
                 prevPoint = nextPoint;
             }

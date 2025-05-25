@@ -135,9 +135,9 @@ public class Simulation : MonoBehaviour
         foreach (Particle p in particles)
         {
             // Use the equation of state (EOS) function
-            const float k = 0.01f;
-            p.pressure = p.density > 0 ? EquationOfState(p.density, p.RestDensity, k) : 0f;
-            p.pressure = p.pressure < 0 ? 0f : p.pressure; // Ensure pressure is non-negative
+            const float k = 20f;
+            p.pressure = p.density < 0.01 ? 0f : EquationOfState(p.density, p.RestDensity, k);
+            p.pressure = p.pressure < 0.01 ? 0f : p.pressure; // Ensure pressure is non-negative
         }
     }
 
@@ -160,8 +160,10 @@ public class Simulation : MonoBehaviour
             Vector2 pressureAcc = Vector2.zero;
             foreach (Particle q in p.neighbors)
             {
-                float coefficient = p.pressure / Mathf.Pow(p.density, 2) + q.pressure / Mathf.Pow(q.density, 2);
                 Vector2 rij = p.position - q.position;
+                if( rij.sqrMagnitude < 0.0001f) continue;
+                float coefficient = p.pressure / Mathf.Pow(p.density, 2) + q.pressure / Mathf.Pow(q.density, 2);
+                
                 pressureAcc += q.mass * coefficient * kernel.grad_W(rij);
             }
             p.acceleration -= pressureAcc;
@@ -179,7 +181,7 @@ public class Simulation : MonoBehaviour
         ComputeDensity();
 
         // GRAVITY
-        // ApplyBodyForce();
+        ApplyBodyForce();
 
         // PRESSURE
         ComputePressure();

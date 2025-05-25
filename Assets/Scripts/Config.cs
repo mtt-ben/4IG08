@@ -3,7 +3,7 @@ using UnityEngine;
 public class Config : MonoBehaviour
 {
     //Simulation parameters
-    public static float DT = 0.03f; // Time step
+    public static float DT = 0.01f; // Time step
     public static float G = 0.5f; // Acceleration of gravity
     public static int GRID_SIZE_X = 60; // Number of grid cells in the x direction
     public static int GRID_SIZE_Y = 30; // Number of grid cells in the y direction
