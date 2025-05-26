@@ -154,7 +154,7 @@ public class Simulation : MonoBehaviour
     }
 
     // Algorithm 1 : Simulation Step
-    void FixedUpdate()
+    void LateUpdate()
     {
         // Apply gravity
         foreach (Particle p in particles)

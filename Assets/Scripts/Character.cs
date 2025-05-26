@@ -12,6 +12,9 @@ public class Character : MonoBehaviour
     public Transform pupil2;
     public Transform visual;
     public GameObject particleObject;
+    public float particleCount = 500f;
+    public float maxParticleCount = 500f;
+    public float size = 1.0f;
     private Simulation sim;
     private bool isPropulsing = false;
 
@@ -24,7 +27,7 @@ public class Character : MonoBehaviour
         iris2 = body.Find("Iris2");
         pupil1 = iris1.Find("Pupil1");
         pupil2 = iris2.Find("Pupil2");
-        sim = FindObjectOfType<Simulation>();
+        sim = FindFirstObjectByType<Simulation>();
         isPropulsing = false;
     }
 
@@ -37,10 +40,20 @@ public class Character : MonoBehaviour
             return;
         }
 
+        handleMovements();
+        handlePropulsion();
+        EyesTrackMouse();
+        adaptSizeToParticleCount();
+    }
+
+    void handleMovements() {
         RaycastHit2D hit = Physics2D.BoxCast(bc.bounds.center, bc.bounds.size, 0f, Vector2.down, 0.1f, LayerMask.GetMask("Ground"));
         bool isGrounded = hit.collider != null;
         bool isTouchingWall = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, 0.1f, LayerMask.GetMask("Ground"));
     
+        if (!isPropulsing && isGrounded) {
+            rb.linearVelocity = new Vector2(0, 0);
+        }
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !isTouchingWall)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 20);
@@ -61,10 +74,11 @@ public class Character : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
         }
+    }
 
-
-        EyesTrackMouse();
-        // Send water particles if mouse is pressed
+    void handlePropulsion() {
+        RaycastHit2D hit = Physics2D.BoxCast(bc.bounds.center, bc.bounds.size, 0f, Vector2.down, 0.1f, LayerMask.GetMask("Ground"));
+        bool isGrounded = hit.collider != null;
         if (Input.GetMouseButton(0))
         {
             isPropulsing = true;
@@ -72,21 +86,25 @@ public class Character : MonoBehaviour
             mouseWorldPos.z = 0;
 
             Vector2 direction = (mouseWorldPos - body.position).normalized;
-            Vector3 spawnPos = body.position + (Vector3)direction;
+            Vector3 spawnPos = body.position + (Vector3)direction * size;
 
-            GameObject particleGO = Instantiate(particleObject, spawnPos, Quaternion.identity);
-            Particle p = particleGO.GetComponent<Particle>();
 
-            if (p != null)
-            {
-                // Add particle to simulation
-                p.velocity = direction * 10f;
-                p.inPlayer = true;
-                sim.AddParticle(p);
+            if (particleCount > 0) {
+                GameObject particleGO = Instantiate(particleObject, spawnPos, Quaternion.identity);
+                Particle p = particleGO.GetComponent<Particle>();
 
-                // Boost player in the opposite direction
-                float boostStrength = 0.5f;
-                rb.AddForce(-direction * boostStrength, ForceMode2D.Impulse);
+                if (p != null)
+                {
+                    // Add particle to simulation
+                    p.velocity = direction * 10f;
+                    p.inPlayer = true;
+                    sim.AddParticle(p);
+
+                    // Boost player in the opposite direction
+                    float boostStrength = 0.5f;
+                    rb.AddForce(-direction * boostStrength, ForceMode2D.Impulse);
+                    particleCount--;
+                }
             }
         }
         else {
@@ -102,20 +120,27 @@ public class Character : MonoBehaviour
 
         Vector3 bodyToMouse = (mouseWorldPosition - body.position).normalized;
         float maxPupilOffset = 0.2f;
-        Vector3 iris1Center = body.position + new Vector3(-0.8f, 0.0f, 0.0f);
-        Vector3 iris2Center = body.position + new Vector3(0.8f, 0.0f, 0.0f);
+        Vector3 iris1Center = body.position + new Vector3(-0.8f, 0.0f, 0.0f) * size;
+        Vector3 iris2Center = body.position + new Vector3(0.8f, 0.0f, 0.0f) * size;
 
         float maxIrisOffset = 0.2f;
-        Vector3 iris1Offset = Vector3.ClampMagnitude(mouseWorldPosition - iris1Center, maxIrisOffset);
-        Vector3 iris2Offset = Vector3.ClampMagnitude(mouseWorldPosition - iris2Center, maxIrisOffset);
+        Vector3 iris1Offset = Vector3.ClampMagnitude(mouseWorldPosition - iris1Center, maxIrisOffset*size);
+        Vector3 iris2Offset = Vector3.ClampMagnitude(mouseWorldPosition - iris2Center, maxIrisOffset*size);
 
         iris1.position = new Vector3(iris1Center.x + iris1Offset.x, iris1Center.y, iris1Center.z);
         iris2.position = new Vector3(iris2Center.x + iris2Offset.x, iris2Center.y, iris2Center.z);
 
-        Vector3 pupil1Offset = Vector3.ClampMagnitude(mouseWorldPosition - iris1.position, maxPupilOffset);
-        Vector3 pupil2Offset = Vector3.ClampMagnitude(mouseWorldPosition - iris2.position, maxPupilOffset);
+        Vector3 pupil1Offset = Vector3.ClampMagnitude(mouseWorldPosition - iris1.position, maxPupilOffset*size);
+        Vector3 pupil2Offset = Vector3.ClampMagnitude(mouseWorldPosition - iris2.position, maxPupilOffset*size);
 
         pupil1.position = iris1.position + pupil1Offset;
         pupil2.position = iris2.position + pupil2Offset;
+    }
+
+    void adaptSizeToParticleCount() {
+        float scaleFactor = Mathf.Clamp(particleCount/maxParticleCount, 0.1f, 5.0f);
+        size = scaleFactor;
+        transform.localScale = new Vector3(0.35f * scaleFactor, 0.35f * scaleFactor, 1);
+        rb.mass = scaleFactor;
     }
 }
