@@ -97,7 +97,6 @@ public class Character : MonoBehaviour
                 {
                     // Add particle to simulation
                     p.velocity = direction * 10f;
-                    p.inPlayer = true;
                     sim.AddParticle(p);
 
                     // Boost player in the opposite direction

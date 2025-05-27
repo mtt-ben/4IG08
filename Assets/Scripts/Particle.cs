@@ -2,8 +2,6 @@ using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
 
-using static Config;
-
 public class Particle : MonoBehaviour
 {
     // Particle fields
@@ -11,7 +9,6 @@ public class Particle : MonoBehaviour
     public Vector2 position;
     public Vector2 prevPosition;
     public List<(float, float)> springs;
-    public bool inPlayer;
     public int grid_x = 0;
     public int grid_y = 0;
     public float density = 0f;
@@ -21,27 +18,13 @@ public class Particle : MonoBehaviour
     private CircleCollider2D circleCollider;
     public float damping = 0.8f;  // Damping factor for collision velocity response
 
-    // Particle properties
-    public float RestDensity => inPlayer ? INPLAYER_REST_DENSITY : REST_DENSITY;
-    public float Stiffness => inPlayer ? INPLAYER_STIFFNESS : STIFFNESS;
-    public float NearStiffness => inPlayer ? INPLAYER_STIFFNESS_NEAR : STIFFNESS_NEAR;
-    public float KernelRadius => inPlayer ? INPLAYER_KERNEL_RADIUS : KERNEL_RADIUS;
-    public float SpringStiffness => inPlayer ? INPLAYER_SPRING_STIFFNESS : SPRING_STIFFNESS;
-    public float PLASTICITY => inPlayer ? INPLAYER_PLASTICITY : PLASTICITY;
-    public float YIELD_RATIO => inPlayer ? INPLAYER_YIELD_RATIO : YIELD_RATIO;
-    public float MinDistRatio => inPlayer ? INPLAYER_MIN_DIST_RATIO : MIN_DIST_RATIO;
-    public float LinViscosity => inPlayer ? INPLAYER_LIN_VISCOSITY : LIN_VISCOSITY;
-    public float QuadViscosity => inPlayer ? INPLAYER_QUAD_VISCOSITY : QUAD_VISCOSITY;
-    public float MaxPressure => inPlayer ? INPLAYER_MAX_PRESSURE : MAX_PRESSURE;
-
     void Start()
     {
         position = transform.position;
         prevPosition = position;
         springs = new List<(float, float)>();
-        inPlayer = false;
-        grid_x = (int)((position.x - X_MIN) / (X_MAX - X_MIN) * GRID_SIZE_X);
-        grid_y = (int)((position.y - Y_MIN) / (Y_MAX - Y_MIN) * GRID_SIZE_Y);
+        grid_x = (int)((position.x - Config.X_MIN) / (Config.X_MAX - Config.X_MIN) * Config.GRID_SIZE_X);
+        grid_y = (int)((position.y - Config.Y_MIN) / (Config.Y_MAX - Config.Y_MIN) * Config.GRID_SIZE_Y);
 
         // Initialize or add CircleCollider2D (set as trigger to avoid physics interference)
         circleCollider = GetComponent<CircleCollider2D>();
@@ -50,21 +33,19 @@ public class Particle : MonoBehaviour
             circleCollider = gameObject.AddComponent<CircleCollider2D>();
             circleCollider.isTrigger = true;
         }
-        circleCollider.radius = KernelRadius;
+        circleCollider.radius = Config.COLLISION_RADIUS;
     }
 
     // Update is called by Simulation.cs
     public void UpdateState()
     {
-        if (position.x < X_MIN || position.x > X_MAX || position.y < Y_MIN || position.y > Y_MAX)
-        {
-            // Reset the particle's position if it goes out of bounds
-            position = new Vector2(Mathf.Clamp(position.x, X_MIN, X_MAX), Mathf.Clamp(position.y, Y_MIN, Y_MAX));
-        }
+        // Apply velocity to position
+        prevPosition = position;
+        position += velocity * Config.DT;
 
         // Update the grid position
-        grid_x = (int)((position.x - X_MIN) / (X_MAX - X_MIN) * GRID_SIZE_X);
-        grid_y = (int)((position.y - Y_MIN) / (Y_MAX - Y_MIN) * GRID_SIZE_Y);
+        grid_x = (int)((position.x - Config.X_MIN) / (Config.X_MAX - Config.X_MIN) * Config.GRID_SIZE_X);
+        grid_y = (int)((position.y - Config.Y_MIN) / (Config.Y_MAX - Config.Y_MIN) * Config.GRID_SIZE_Y);
 
         // Update the particle's transform position
         if (!float.IsNaN(position.x) && !float.IsNaN(position.y))
@@ -74,20 +55,20 @@ public class Particle : MonoBehaviour
     // Collision detection returns (collided?, normal, penetration)
     public (bool, Vector2, float) CheckCollision()
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(position, KernelRadius);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(position, Config.COLLISION_RADIUS, LayerMask.GetMask("Default"));
 
         foreach (Collider2D hit in hits)
         {
-            if (hit.gameObject != this.gameObject)
+            if (hit.gameObject != this.gameObject && hit.gameObject.layer != LayerMask.NameToLayer("Water"))
             {
                 Vector2 closestPoint = hit.ClosestPoint(position);
                 Vector2 diff = position - closestPoint;
                 float dist = diff.magnitude;
 
-                if (dist < KernelRadius && dist > 0f)  // Avoid division by zero
+                if (dist < Config.COLLISION_RADIUS && dist > 0f)  // Avoid division by zero
                 {
                     Vector2 normal = diff.normalized;
-                    float penetration = KernelRadius - dist;
+                    float penetration = Config.COLLISION_RADIUS - dist;
                     return (true, normal, penetration);
                 }
             }
@@ -100,7 +81,6 @@ public class Particle : MonoBehaviour
     {
         velocity = ReflectVelocity(velocity, normal) * damping;
         position += normal * penetration;
-        UpdateState();
     }
 
     private Vector2 ReflectVelocity(Vector2 velocity, Vector2 normal)
