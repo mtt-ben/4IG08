@@ -5,6 +5,7 @@ public class Character : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Rigidbody2D rb;
     public BoxCollider2D bc;
+    public CircleCollider2D absorbCollider;
     public Transform body;
     public Transform iris1;
     public Transform iris2;
@@ -12,6 +13,7 @@ public class Character : MonoBehaviour
     public Transform pupil2;
     public Transform visual;
     public GameObject particleObject;
+    public GameObject absorbVisual;
     public float particleCount = 500f;
     public float maxParticleCount = 500f;
     public float size = 1.0f;
@@ -22,6 +24,7 @@ public class Character : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         bc = GetComponent<BoxCollider2D>();
+        absorbCollider = GetComponent<CircleCollider2D>();
         body = transform.Find("Body");
         iris1 = body.Find("Iris1");
         iris2 = body.Find("Iris2");
@@ -29,6 +32,7 @@ public class Character : MonoBehaviour
         pupil2 = iris2.Find("Pupil2");
         sim = FindFirstObjectByType<Simulation>();
         isPropulsing = false;
+        absorbVisual.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,13 +40,14 @@ public class Character : MonoBehaviour
     {
         if (rb.bodyType == RigidbodyType2D.Kinematic)
         {
-            EyesTrackMouse();
+            eyesTrackMouse();
             return;
         }
 
         handleMovements();
         handlePropulsion();
-        EyesTrackMouse();
+        handleAbsorption();
+        eyesTrackMouse();
         adaptSizeToParticleCount();
     }
 
@@ -51,8 +56,8 @@ public class Character : MonoBehaviour
         bool isGrounded = hit.collider != null;
         bool isTouchingWall = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, 0.1f, LayerMask.GetMask("Ground"));
     
-        if (!isPropulsing && isGrounded) {
-            rb.linearVelocity = new Vector2(0, 0);
+        if (isGrounded && !isPropulsing) {
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
         }
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !isTouchingWall)
         {
@@ -111,7 +116,7 @@ public class Character : MonoBehaviour
         }
     }
 
-    void EyesTrackMouse()
+    void eyesTrackMouse()
     {
         Vector3 mouseScreenPosition = Input.mousePosition;
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
@@ -134,6 +139,30 @@ public class Character : MonoBehaviour
 
         pupil1.position = iris1.position + pupil1Offset;
         pupil2.position = iris2.position + pupil2Offset;
+    }
+
+    void handleAbsorption() {
+        if (Input.GetMouseButton(1) && !isPropulsing) {
+            absorbVisual.SetActive(true);
+            absorbVisual.transform.Rotate(0, 0, 10 * Time.deltaTime);
+            Vector2 center = (Vector2)absorbCollider.transform.position + absorbCollider.offset;
+            float radius = absorbCollider.radius * absorbCollider.transform.lossyScale.x;
+            Collider2D[] hits = Physics2D.OverlapCircleAll(center, radius, LayerMask.GetMask("Water"));
+            foreach (Collider2D hit in hits)
+            {
+                Particle particle = hit.GetComponent<Particle>();
+                if (particle != null && particleCount < maxParticleCount)
+                {
+                    Debug.Log("Absorbing particle: " + particle.name);
+                    sim.RemoveParticle(particle);
+                    Destroy(hit.gameObject);
+                    particleCount++;
+                }
+            }
+        }
+        else {
+            absorbVisual.SetActive(false);
+        }
     }
 
     void adaptSizeToParticleCount() {

@@ -55,7 +55,7 @@ public class Particle : MonoBehaviour
     // Collision detection returns (collided?, normal, penetration)
     public (bool, Vector2, float) CheckCollision()
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(position, Config.COLLISION_RADIUS, LayerMask.GetMask("Default"));
+        Collider2D[] hits = Physics2D.OverlapCircleAll(position, Config.COLLISION_RADIUS, LayerMask.GetMask("Default ", "Ground"));
 
         foreach (Collider2D hit in hits)
         {

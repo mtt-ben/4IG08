@@ -1,0 +1,4186 @@
+fileFormatVersion: 2
+guid: cb58bbed788d52a41a580dcad8853854
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1376197191437448965
+    second: absorb_visual_0
+  - first:
+      213: 7871399915638429442
+    second: absorb_visual_1
+  - first:
+      213: 1272624062953468071
+    second: absorb_visual_2
+  - first:
+      213: -7796381738507353319
+    second: absorb_visual_3
+  - first:
+      213: 5507277857973584887
+    second: absorb_visual_4
+  - first:
+      213: 4833457445536036806
+    second: absorb_visual_5
+  - first:
+      213: 2052479163056142129
+    second: absorb_visual_6
+  - first:
+      213: 4431720379284146292
+    second: absorb_visual_7
+  - first:
+      213: -7843990035840735226
+    second: absorb_visual_8
+  - first:
+      213: -9002607666434004706
+    second: absorb_visual_9
+  - first:
+      213: -1175269508718431542
+    second: absorb_visual_10
+  - first:
+      213: -8597890238330872573
+    second: absorb_visual_11
+  - first:
+      213: 1731008012378644957
+    second: absorb_visual_12
+  - first:
+      213: 1631437326925359452
+    second: absorb_visual_13
+  - first:
+      213: -8387796620753351720
+    second: absorb_visual_14
+  - first:
+      213: -6797847126227970382
+    second: absorb_visual_15
+  - first:
+      213: 4715313370648088422
+    second: absorb_visual_16
+  - first:
+      213: 4169193850188425060
+    second: absorb_visual_17
+  - first:
+      213: 5019016033952593279
+    second: absorb_visual_18
+  - first:
+      213: 8504622387601764372
+    second: absorb_visual_19
+  - first:
+      213: 1534926725490275653
+    second: absorb_visual_20
+  - first:
+      213: -1356918021810066400
+    second: absorb_visual_21
+  - first:
+      213: -601055431200204594
+    second: absorb_visual_22
+  - first:
+      213: 3876525722273903547
+    second: absorb_visual_23
+  - first:
+      213: -914274486074038923
+    second: absorb_visual_24
+  - first:
+      213: 6100570475942433583
+    second: absorb_visual_25
+  - first:
+      213: 3188655548189377481
+    second: absorb_visual_26
+  - first:
+      213: 5447096445012723214
+    second: absorb_visual_27
+  - first:
+      213: -7128412201295139503
+    second: absorb_visual_28
+  - first:
+      213: 4042441285295864266
+    second: absorb_visual_29
+  - first:
+      213: -9176755979721368792
+    second: absorb_visual_30
+  - first:
+      213: 2474483801370300492
+    second: absorb_visual_31
+  - first:
+      213: -7604566203267556925
+    second: absorb_visual_32
+  - first:
+      213: 4207525991292040732
+    second: absorb_visual_33
+  - first:
+      213: 6867546026352107930
+    second: absorb_visual_34
+  - first:
+      213: 6793867372209674766
+    second: absorb_visual_35
+  - first:
+      213: 6693034569716548435
+    second: absorb_visual_36
+  - first:
+      213: -798752963469479390
+    second: absorb_visual_37
+  - first:
+      213: 8369462267367044286
+    second: absorb_visual_38
+  - first:
+      213: 3007458176716239378
+    second: absorb_visual_39
+  - first:
+      213: 3419138225079958979
+    second: absorb_visual_40
+  - first:
+      213: -6703823169481223685
+    second: absorb_visual_41
+  - first:
+      213: 1671748117097450524
+    second: absorb_visual_42
+  - first:
+      213: -691100544622819059
+    second: absorb_visual_43
+  - first:
+      213: 1789458810180864126
+    second: absorb_visual_44
+  - first:
+      213: -8202696456541840086
+    second: absorb_visual_45
+  - first:
+      213: -7866536746650733241
+    second: absorb_visual_46
+  - first:
+      213: -8419979806957354275
+    second: absorb_visual_47
+  - first:
+      213: -5582838645707728843
+    second: absorb_visual_48
+  - first:
+      213: -3766622717045423772
+    second: absorb_visual_49
+  - first:
+      213: 1721011134424161594
+    second: absorb_visual_50
+  - first:
+      213: 9163452059097236386
+    second: absorb_visual_51
+  - first:
+      213: 2290008583233718791
+    second: absorb_visual_52
+  - first:
+      213: -2587026562412792943
+    second: absorb_visual_53
+  - first:
+      213: -7928109266797732523
+    second: absorb_visual_54
+  - first:
+      213: -6262643210105374785
+    second: absorb_visual_55
+  - first:
+      213: -4987516967133737279
+    second: absorb_visual_56
+  - first:
+      213: 3026508227456988891
+    second: absorb_visual_57
+  - first:
+      213: -2488431277052543780
+    second: absorb_visual_58
+  - first:
+      213: 8462222275426057984
+    second: absorb_visual_59
+  - first:
+      213: 3765654499730905464
+    second: absorb_visual_60
+  - first:
+      213: -8693270039660563811
+    second: absorb_visual_61
+  - first:
+      213: 6558581540913787245
+    second: absorb_visual_62
+  - first:
+      213: -4351167246195072432
+    second: absorb_visual_63
+  - first:
+      213: -1636057822478617357
+    second: absorb_visual_64
+  - first:
+      213: 7356301708136091542
+    second: absorb_visual_65
+  - first:
+      213: -5038278226543668873
+    second: absorb_visual_66
+  - first:
+      213: -9201586854687731871
+    second: absorb_visual_67
+  - first:
+      213: -5288791904064286593
+    second: absorb_visual_68
+  - first:
+      213: -4460554014405422493
+    second: absorb_visual_69
+  - first:
+      213: 916611046084943598
+    second: absorb_visual_70
+  - first:
+      213: -1139846590625252101
+    second: absorb_visual_71
+  - first:
+      213: -2857703212398178794
+    second: absorb_visual_72
+  - first:
+      213: -4557071572331524601
+    second: absorb_visual_73
+  - first:
+      213: 5587934005073643092
+    second: absorb_visual_74
+  - first:
+      213: -1682860303894885039
+    second: absorb_visual_75
+  - first:
+      213: 5737137797860017583
+    second: absorb_visual_76
+  - first:
+      213: 732187434548409487
+    second: absorb_visual_77
+  - first:
+      213: 6946879885401957034
+    second: absorb_visual_78
+  - first:
+      213: 773262700539398528
+    second: absorb_visual_79
+  - first:
+      213: 7722603923942966253
+    second: absorb_visual_80
+  - first:
+      213: -776136176948312699
+    second: absorb_visual_81
+  - first:
+      213: -2667630879045211357
+    second: absorb_visual_82
+  - first:
+      213: -2579131329571142942
+    second: absorb_visual_83
+  - first:
+      213: -3826172885904966155
+    second: absorb_visual_84
+  - first:
+      213: 878148833850098649
+    second: absorb_visual_85
+  - first:
+      213: -7797140018017257204
+    second: absorb_visual_86
+  - first:
+      213: -4696335925937108205
+    second: absorb_visual_87
+  - first:
+      213: 7836779928449886209
+    second: absorb_visual_88
+  - first:
+      213: 1585716213211352431
+    second: absorb_visual_89
+  - first:
+      213: 5203401450547355112
+    second: absorb_visual_90
+  - first:
+      213: -8783766241653140924
+    second: absorb_visual_91
+  - first:
+      213: -2558194622692967180
+    second: absorb_visual_92
+  - first:
+      213: 4295816214278988693
+    second: absorb_visual_93
+  - first:
+      213: 6463518549124157697
+    second: absorb_visual_94
+  - first:
+      213: -6946546073569485579
+    second: absorb_visual_95
+  - first:
+      213: 4505065642164526160
+    second: absorb_visual_96
+  - first:
+      213: -1473544653364899834
+    second: absorb_visual_97
+  - first:
+      213: -2393568153855103049
+    second: absorb_visual_98
+  - first:
+      213: 7886909132344024361
+    second: absorb_visual_99
+  - first:
+      213: -2234570331373181769
+    second: absorb_visual_100
+  - first:
+      213: 7605663496453412324
+    second: absorb_visual_101
+  - first:
+      213: -718689467285515195
+    second: absorb_visual_102
+  - first:
+      213: 97236647058415233
+    second: absorb_visual_103
+  - first:
+      213: 5653988136401888315
+    second: absorb_visual_104
+  - first:
+      213: -9178083715214176377
+    second: absorb_visual_105
+  - first:
+      213: -4571961468285353278
+    second: absorb_visual_106
+  - first:
+      213: 3390870131165434588
+    second: absorb_visual_107
+  - first:
+      213: 6403293898239482507
+    second: absorb_visual_108
+  - first:
+      213: -3063384451152526336
+    second: absorb_visual_109
+  - first:
+      213: -516365049825085955
+    second: absorb_visual_110
+  - first:
+      213: -5088817970286583958
+    second: absorb_visual_111
+  - first:
+      213: -1857568868672519596
+    second: absorb_visual_112
+  - first:
+      213: 4000040834394358611
+    second: absorb_visual_113
+  - first:
+      213: -264113671551597699
+    second: absorb_visual_114
+  - first:
+      213: -1682281825078914940
+    second: absorb_visual_115
+  - first:
+      213: -7560315008009681227
+    second: absorb_visual_116
+  - first:
+      213: -1901326801024664711
+    second: absorb_visual_117
+  - first:
+      213: -1066360747051581136
+    second: absorb_visual_118
+  - first:
+      213: -9197541820124620511
+    second: absorb_visual_119
+  - first:
+      213: 9155920030902271284
+    second: absorb_visual_120
+  - first:
+      213: 6343586108049427236
+    second: absorb_visual_121
+  - first:
+      213: -5172929920053750157
+    second: absorb_visual_122
+  - first:
+      213: -8693767421600961956
+    second: absorb_visual_123
+  - first:
+      213: -6949781777452316390
+    second: absorb_visual_124
+  - first:
+      213: -1187732252812318241
+    second: absorb_visual_125
+  - first:
+      213: -3895551654262775201
+    second: absorb_visual_126
+  - first:
+      213: 1040923709354786408
+    second: absorb_visual_127
+  - first:
+      213: 2432679480401903029
+    second: absorb_visual_128
+  - first:
+      213: 8144873948991683558
+    second: absorb_visual_129
+  - first:
+      213: -7793090182580047425
+    second: absorb_visual_130
+  - first:
+      213: 3580593029280884432
+    second: absorb_visual_131
+  - first:
+      213: 5034352192987701794
+    second: absorb_visual_132
+  - first:
+      213: -4399584307461579632
+    second: absorb_visual_133
+  - first:
+      213: -2543963464790618633
+    second: absorb_visual_134
+  - first:
+      213: 7378444265995183045
+    second: absorb_visual_135
+  - first:
+      213: -7884999035934238721
+    second: absorb_visual_136
+  - first:
+      213: 8023113959077391152
+    second: absorb_visual_137
+  - first:
+      213: -8428351355483228636
+    second: absorb_visual_138
+  - first:
+      213: -5508809420699484153
+    second: absorb_visual_139
+  - first:
+      213: 6404831251858701179
+    second: absorb_visual_140
+  - first:
+      213: 4044801220489075580
+    second: absorb_visual_141
+  - first:
+      213: -6818521653177314340
+    second: absorb_visual_142
+  - first:
+      213: -1122275667499390287
+    second: absorb_visual_143
+  - first:
+      213: -7389585698807812711
+    second: absorb_visual_144
+  - first:
+      213: -8851236603405685605
+    second: absorb_visual_145
+  - first:
+      213: 4786257083837688409
+    second: absorb_visual_146
+  - first:
+      213: -7455599936148582054
+    second: absorb_visual_147
+  - first:
+      213: 4931226819154844990
+    second: absorb_visual_148
+  - first:
+      213: 1131015250115120632
+    second: absorb_visual_149
+  - first:
+      213: -2664349609470480640
+    second: absorb_visual_150
+  - first:
+      213: 5566488475158750328
+    second: absorb_visual_151
+  - first:
+      213: 8590785150881506262
+    second: absorb_visual_152
+  - first:
+      213: -140272158505356876
+    second: absorb_visual_153
+  - first:
+      213: 3265151251206243353
+    second: absorb_visual_154
+  - first:
+      213: 1611086377046715924
+    second: absorb_visual_155
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: absorb_visual_0
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 976
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 507f480ed0c391310800000000000000
+      internalID: 1376197191437448965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_1
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 979
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2071ba0d484dc3d60800000000000000
+      internalID: 7871399915638429442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_2
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 981
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a0b4f4b7d449a110800000000000000
+      internalID: 1272624062953468071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_3
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 983
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9134de6ad10bdc390800000000000000
+      internalID: -7796381738507353319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_4
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 984
+        width: 20
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f3c3e37808cd6c40800000000000000
+      internalID: 5507277857973584887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_5
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 983
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c7742e10f3e31340800000000000000
+      internalID: 4833457445536036806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_6
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 982
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1373ade9ceedb7c10800000000000000
+      internalID: 2052479163056142129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_7
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 980
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47847176432a08d30800000000000000
+      internalID: 4431720379284146292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_8
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 978
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60862042f9c842390800000000000000
+      internalID: -7843990035840735226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_9
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 974
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e192ef57600501380800000000000000
+      internalID: -9002607666434004706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_10
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 963
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac27d71db9a90bfe0800000000000000
+      internalID: -1175269508718431542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_11
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 968
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30d5d7eb1682ea880800000000000000
+      internalID: -8597890238330872573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_12
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 972
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd12f21bd96c50810800000000000000
+      internalID: 1731008012378644957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_13
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 970
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c59e2b8ea9704a610800000000000000
+      internalID: 1631437326925359452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_14
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 966
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8db46c3f96f889b80800000000000000
+      internalID: -8387796620753351720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_15
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 960
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b695c32e0239a1a0800000000000000
+      internalID: -6797847126227970382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_16
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 950
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66f012e1788207140800000000000000
+      internalID: 4715313370648088422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_17
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 957
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4676938a7b3fbd930800000000000000
+      internalID: 4169193850188425060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_18
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 954
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f75fbb1bd7027a540800000000000000
+      internalID: 5019016033952593279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_19
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 947
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41076d9800d760670800000000000000
+      internalID: 8504622387601764372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_20
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 935
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 545f91579b72d4510800000000000000
+      internalID: 1534926725490275653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_21
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 943
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02c6fa89f324b2de0800000000000000
+      internalID: -1356918021810066400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_22
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 940
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec81ef4154f98a7f0800000000000000
+      internalID: -601055431200204594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_23
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 932
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb3fcce0b9f2cc530800000000000000
+      internalID: 3876525722273903547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_24
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 918
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 575aa5ee238df43f0800000000000000
+      internalID: -914274486074038923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_25
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 927
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f23d8c1968499a450800000000000000
+      internalID: 6100570475942433583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_26
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 923
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c308eca351604c20800000000000000
+      internalID: 3188655548189377481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_27
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 914
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e06c6465b59f79b40800000000000000
+      internalID: 5447096445012723214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_28
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 898
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15d2e31fedac21d90800000000000000
+      internalID: -7128412201295139503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_29
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 908
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac9fe636ee2a91830800000000000000
+      internalID: 4042441285295864266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_30
+      rect:
+        serializedVersion: 2
+        x: 1202
+        y: 904
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82b14469e0d95a080800000000000000
+      internalID: -9176755979721368792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_31
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 893
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c40922f28e1275220800000000000000
+      internalID: 2474483801370300492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_32
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 875
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c9db4f2457277690800000000000000
+      internalID: -7604566203267556925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_33
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 887
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c167f2eb892246a30800000000000000
+      internalID: 4207525991292040732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_34
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 882
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a91ec53a9bc6e4f50800000000000000
+      internalID: 6867546026352107930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_35
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 863
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0a9cab216aa84e50800000000000000
+      internalID: 6793867372209674766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_36
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 870
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3534d5dda7f62ec50800000000000000
+      internalID: 6693034569716548435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_37
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 858
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2227c1569624ae4f0800000000000000
+      internalID: -798752963469479390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_38
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 838
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb4b27fb69d462470800000000000000
+      internalID: 8369462267367044286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_39
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 851
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 212f30c0743acb920800000000000000
+      internalID: 3007458176716239378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_40
+      rect:
+        serializedVersion: 2
+        x: 1271
+        y: 845
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cdb9dfa918337f20800000000000000
+      internalID: 3419138225079958979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_41
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 824
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf1d902885c37f2a0800000000000000
+      internalID: -6703823169481223685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_42
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 832
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1c85812e0e333710800000000000000
+      internalID: 1671748117097450524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_43
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 818
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d098dad57b7b866f0800000000000000
+      internalID: -691100544622819059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_44
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 796
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7806019e4f65d810800000000000000
+      internalID: 1789458810180864126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_45
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 810
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2dd773580b2a2e80800000000000000
+      internalID: -8202696456541840086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_46
+      rect:
+        serializedVersion: 2
+        x: 1307
+        y: 804
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7457353f18274d290800000000000000
+      internalID: -7866536746650733241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_47
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 781
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd2485ef9f8362b80800000000000000
+      internalID: -8419979806957354275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_48
+      rect:
+        serializedVersion: 2
+        x: 1318
+        y: 790
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5389444b4d5c582b0800000000000000
+      internalID: -5582838645707728843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_49
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 775
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 461479368944abbc0800000000000000
+      internalID: -3766622717045423772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_50
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 750
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3d18d9228242e710800000000000000
+      internalID: 1721011134424161594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_51
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 766
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a300d2091f1b2f70800000000000000
+      internalID: 9163452059097236386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_52
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 759
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70acd386caeb7cf10800000000000000
+      internalID: 2290008583233718791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_53
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 734
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 193b2e25c09091cd0800000000000000
+      internalID: -2587026562412792943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_54
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 744
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55dd90470a2b9f190800000000000000
+      internalID: -7928109266797732523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_55
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 727
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb738aa6e2f9619a0800000000000000
+      internalID: -6262643210105374785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_56
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 701
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ce82ce4eb7c8cab0800000000000000
+      internalID: -4987516967133737279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_57
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 718
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd6fe5f9231500a20800000000000000
+      internalID: 3026508227456988891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_58
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 711
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdcbf4310f0577dd0800000000000000
+      internalID: -2488431277052543780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_59
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 685
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00ffa21235adf6570800000000000000
+      internalID: 8462222275426057984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_60
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 694
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 879df43f0da424430800000000000000
+      internalID: 3765654499730905464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_61
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 678
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d927c7535fc4b5780800000000000000
+      internalID: -8693270039660563811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_62
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 650
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d61b990a923c40b50800000000000000
+      internalID: 6558581540913787245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_63
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 668
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0526a3c617c8d93c0800000000000000
+      internalID: -4351167246195072432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_64
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 660
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f4b923241e8b49e0800000000000000
+      internalID: -1636057822478617357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_65
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 633
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69f0d0e9d65d61660800000000000000
+      internalID: 7356301708136091542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_66
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 643
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 771974b95a0741ab0800000000000000
+      internalID: -5038278226543668873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_67
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 626
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16f0f6cf1856d4080800000000000000
+      internalID: -9201586854687731871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_68
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 615
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f705943d8cf6a96b0800000000000000
+      internalID: -5288791904064286593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_69
+      rect:
+        serializedVersion: 2
+        x: 1395
+        y: 608
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3621ce5c1cde812c0800000000000000
+      internalID: -4460554014405422493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_70
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 598
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eee9717d3e478bc00800000000000000
+      internalID: 916611046084943598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_71
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 590
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfc7753a0937e20f0800000000000000
+      internalID: -1139846590625252101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_72
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 580
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61e838fa1166758d0800000000000000
+      internalID: -2857703212398178794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_73
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 572
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70e0623ac8702c0c0800000000000000
+      internalID: -4557071572331524601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_74
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 562
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4568db81f545c8d40800000000000000
+      internalID: 5587934005073643092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_75
+      rect:
+        serializedVersion: 2
+        x: 1402
+        y: 555
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15d4db3487745a8e0800000000000000
+      internalID: -1682860303894885039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_76
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 544
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa5c9e43e686e9f40800000000000000
+      internalID: 5737137797860017583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_77
+      rect:
+        serializedVersion: 2
+        x: 1403
+        y: 537
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f843349a790492a00800000000000000
+      internalID: 732187434548409487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_78
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 526
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa2a0ba1376486060800000000000000
+      internalID: 6946879885401957034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_79
+      rect:
+        serializedVersion: 2
+        x: 1402
+        y: 519
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 089c5b7445e2bba00800000000000000
+      internalID: 773262700539398528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_80
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 508
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de388ab4a533c2b60800000000000000
+      internalID: 7722603923942966253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_81
+      rect:
+        serializedVersion: 2
+        x: 1401
+        y: 500
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5858aab524c9a35f0800000000000000
+      internalID: -776136176948312699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_82
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 490
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32ba5a669dbaafad0800000000000000
+      internalID: -2667630879045211357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_83
+      rect:
+        serializedVersion: 2
+        x: 1399
+        y: 482
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e2c4d778b5153cd0800000000000000
+      internalID: -2579131329571142942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_84
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 472
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fd376e3804b6eac0800000000000000
+      internalID: -3826172885904966155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_85
+      rect:
+        serializedVersion: 2
+        x: 1397
+        y: 465
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d30f8536bfcf2c00800000000000000
+      internalID: 878148833850098649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_86
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 454
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c093912f67efac390800000000000000
+      internalID: -7797140018017257204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_87
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 447
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31b0d9c8b5343deb0800000000000000
+      internalID: -4696335925937108205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_88
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 436
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 108aa2ae2d5d1cc60800000000000000
+      internalID: 7836779928449886209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_89
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 419
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6d4a039e78910610800000000000000
+      internalID: 1585716213211352431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_90
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 429
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ed90abec02363840800000000000000
+      internalID: 5203401450547355112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_91
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 402
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4425230442bc91680800000000000000
+      internalID: -8783766241653140924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_92
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 395
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fc32186b877f7cd0800000000000000
+      internalID: -2558194622692967180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_93
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 412
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5936670361ecd9b30800000000000000
+      internalID: 4295816214278988693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_94
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 385
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10191bf00e703b950800000000000000
+      internalID: 6463518549124157697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_95
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 367
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fc91058629e89f90800000000000000
+      internalID: -6946546073569485579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_96
+      rect:
+        serializedVersion: 2
+        x: 1373
+        y: 377
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c980b2555358e30800000000000000
+      internalID: 4505065642164526160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_97
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 351
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6005287e1faec8be0800000000000000
+      internalID: -1473544653364899834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_98
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 344
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bf67cb127658ced0800000000000000
+      internalID: -2393568153855103049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_99
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 361
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92d5629b11ee37d60800000000000000
+      internalID: 7886909132344024361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_100
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 335
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b4efd47f163df0e0800000000000000
+      internalID: -2234570331373181769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_101
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 319
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e5d24b47aebc8960800000000000000
+      internalID: 7605663496453412324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_102
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 328
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 544d1aebcb3b606f0800000000000000
+      internalID: -718689467285515195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_103
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 303
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18e111f1734795100800000000000000
+      internalID: 97236647058415233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_104
+      rect:
+        serializedVersion: 2
+        x: 1333
+        y: 297
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b34e1820140077e40800000000000000
+      internalID: 5653988136401888315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_105
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 312
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78f8cd31d75e0a080800000000000000
+      internalID: -9178083715214176377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_106
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 288
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c2041494412d80c0800000000000000
+      internalID: -4571961468285353278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_107
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 273
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd2199f2b6ace0f20800000000000000
+      internalID: 3390870131165434588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_108
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 282
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8a9df4dfd11dd850800000000000000
+      internalID: 6403293898239482507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_109
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 259
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 004499a721cac75d0800000000000000
+      internalID: -3063384451152526336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_110
+      rect:
+        serializedVersion: 2
+        x: 1301
+        y: 253
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df5bfb619b085d8f0800000000000000
+      internalID: -516365049825085955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_111
+      rect:
+        serializedVersion: 2
+        x: 1313
+        y: 267
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6f917a8403e069b0800000000000000
+      internalID: -5088817970286583958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_112
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 245
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45243fca4f69836e0800000000000000
+      internalID: -1857568868672519596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_113
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 232
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 353022d12fff28730800000000000000
+      internalID: 4000040834394358611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_114
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 239
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d73c7dad30ea55cf0800000000000000
+      internalID: -264113671551597699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_115
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 219
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 480531cd79557a8e0800000000000000
+      internalID: -1682281825078914940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_116
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 213
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b647857e8d541790800000000000000
+      internalID: -7560315008009681227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_117
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 226
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97bbefe19512d95e0800000000000000
+      internalID: -1901326801024664711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_118
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 206
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0310295ec868331f0800000000000000
+      internalID: -1066360747051581136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_119
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 194
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1291cacf174cb5080800000000000000
+      internalID: -9197541820124620511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_120
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 201
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43d30d902cc501f70800000000000000
+      internalID: 9155920030902271284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_121
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 183
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42b836c94f1f80850800000000000000
+      internalID: 6343586108049427236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_122
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 178
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 376d43325af0638b0800000000000000
+      internalID: -5172929920053750157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_123
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 190
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5a6c937798895780800000000000000
+      internalID: -8693767421600961956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_124
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 172
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a19c8708b4a6d8f90800000000000000
+      internalID: -6949781777452316390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_125
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 162
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd9e8d61fc3548fe0800000000000000
+      internalID: -1187732252812318241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_126
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 158
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f526b73f86830f9c0800000000000000
+      internalID: -3895551654262775201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_127
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 168
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86ebf5e399a127e00800000000000000
+      internalID: 1040923709354786408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_128
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 152
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bdbcb9391d92c120800000000000000
+      internalID: 2432679480401903029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_129
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 143
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eb7bf504b7680170800000000000000
+      internalID: 8144873948991683558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_130
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 140
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb17bbcb4c169d390800000000000000
+      internalID: -7793090182580047425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_131
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 148
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d6e68ba362d0b130800000000000000
+      internalID: 3580593029280884432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_132
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 135
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 222ad3975ac9dd540800000000000000
+      internalID: 5034352192987701794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_133
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 128
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09c9e52e16981f2c0800000000000000
+      internalID: -4399584307461579632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_134
+      rect:
+        serializedVersion: 2
+        x: 1131
+        y: 125
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fd459f05b602bcd0800000000000000
+      internalID: -2543963464790618633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_135
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 132
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c329ad97ff756660800000000000000
+      internalID: 7378444265995183045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_136
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 120
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff797d0472bd29290800000000000000
+      internalID: -7884999035934238721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_137
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 114
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03b294333a3d75f60800000000000000
+      internalID: 8023113959077391152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_138
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 108
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4267d36f81b780b80800000000000000
+      internalID: -8428351355483228636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_139
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 112
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 700c1efc407cc83b0800000000000000
+      internalID: -5508809420699484153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_140
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 118
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7bbb5dd61882e850800000000000000
+      internalID: 6404831251858701179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_141
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 104
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7b515e9745022830800000000000000
+      internalID: 4044801220489075580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_142
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 99
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd39e09beaebf51a0800000000000000
+      internalID: -6818521653177314340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_143
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 96
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ba62aaf930ec60f0800000000000000
+      internalID: -1122275667499390287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_144
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 98
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99de04965fae27990800000000000000
+      internalID: -7389585698807812711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_145
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 102
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9ca11f74371a2580800000000000000
+      internalID: -8851236603405685605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_146
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 106
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95aa7d585733c6240800000000000000
+      internalID: 4786257083837688409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_147
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 93
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a51507a0c53688890800000000000000
+      internalID: -7455599936148582054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_148
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 91
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3d9a9e4aac3f6440800000000000000
+      internalID: 4931226819154844990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_149
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 90
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fd49aaa06c22bf00800000000000000
+      internalID: 1131015250115120632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_150
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 89
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00faf028524560bd0800000000000000
+      internalID: -2664349609470480640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_151
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 89
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 874a42096c3204d40800000000000000
+      internalID: 5566488475158750328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_152
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 90
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d32efb2499983770800000000000000
+      internalID: 8590785150881506262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_153
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 91
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b1396c0737ad0ef0800000000000000
+      internalID: -140272158505356876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_154
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 92
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 914021273c5205d20800000000000000
+      internalID: 3265151251206243353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: absorb_visual_155
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 95
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41e2756268abb5610800000000000000
+      internalID: 1611086377046715924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      absorb_visual_0: 1376197191437448965
+      absorb_visual_1: 7871399915638429442
+      absorb_visual_10: -1175269508718431542
+      absorb_visual_100: -2234570331373181769
+      absorb_visual_101: 7605663496453412324
+      absorb_visual_102: -718689467285515195
+      absorb_visual_103: 97236647058415233
+      absorb_visual_104: 5653988136401888315
+      absorb_visual_105: -9178083715214176377
+      absorb_visual_106: -4571961468285353278
+      absorb_visual_107: 3390870131165434588
+      absorb_visual_108: 6403293898239482507
+      absorb_visual_109: -3063384451152526336
+      absorb_visual_11: -8597890238330872573
+      absorb_visual_110: -516365049825085955
+      absorb_visual_111: -5088817970286583958
+      absorb_visual_112: -1857568868672519596
+      absorb_visual_113: 4000040834394358611
+      absorb_visual_114: -264113671551597699
+      absorb_visual_115: -1682281825078914940
+      absorb_visual_116: -7560315008009681227
+      absorb_visual_117: -1901326801024664711
+      absorb_visual_118: -1066360747051581136
+      absorb_visual_119: -9197541820124620511
+      absorb_visual_12: 1731008012378644957
+      absorb_visual_120: 9155920030902271284
+      absorb_visual_121: 6343586108049427236
+      absorb_visual_122: -5172929920053750157
+      absorb_visual_123: -8693767421600961956
+      absorb_visual_124: -6949781777452316390
+      absorb_visual_125: -1187732252812318241
+      absorb_visual_126: -3895551654262775201
+      absorb_visual_127: 1040923709354786408
+      absorb_visual_128: 2432679480401903029
+      absorb_visual_129: 8144873948991683558
+      absorb_visual_13: 1631437326925359452
+      absorb_visual_130: -7793090182580047425
+      absorb_visual_131: 3580593029280884432
+      absorb_visual_132: 5034352192987701794
+      absorb_visual_133: -4399584307461579632
+      absorb_visual_134: -2543963464790618633
+      absorb_visual_135: 7378444265995183045
+      absorb_visual_136: -7884999035934238721
+      absorb_visual_137: 8023113959077391152
+      absorb_visual_138: -8428351355483228636
+      absorb_visual_139: -5508809420699484153
+      absorb_visual_14: -8387796620753351720
+      absorb_visual_140: 6404831251858701179
+      absorb_visual_141: 4044801220489075580
+      absorb_visual_142: -6818521653177314340
+      absorb_visual_143: -1122275667499390287
+      absorb_visual_144: -7389585698807812711
+      absorb_visual_145: -8851236603405685605
+      absorb_visual_146: 4786257083837688409
+      absorb_visual_147: -7455599936148582054
+      absorb_visual_148: 4931226819154844990
+      absorb_visual_149: 1131015250115120632
+      absorb_visual_15: -6797847126227970382
+      absorb_visual_150: -2664349609470480640
+      absorb_visual_151: 5566488475158750328
+      absorb_visual_152: 8590785150881506262
+      absorb_visual_153: -140272158505356876
+      absorb_visual_154: 3265151251206243353
+      absorb_visual_155: 1611086377046715924
+      absorb_visual_16: 4715313370648088422
+      absorb_visual_17: 4169193850188425060
+      absorb_visual_18: 5019016033952593279
+      absorb_visual_19: 8504622387601764372
+      absorb_visual_2: 1272624062953468071
+      absorb_visual_20: 1534926725490275653
+      absorb_visual_21: -1356918021810066400
+      absorb_visual_22: -601055431200204594
+      absorb_visual_23: 3876525722273903547
+      absorb_visual_24: -914274486074038923
+      absorb_visual_25: 6100570475942433583
+      absorb_visual_26: 3188655548189377481
+      absorb_visual_27: 5447096445012723214
+      absorb_visual_28: -7128412201295139503
+      absorb_visual_29: 4042441285295864266
+      absorb_visual_3: -7796381738507353319
+      absorb_visual_30: -9176755979721368792
+      absorb_visual_31: 2474483801370300492
+      absorb_visual_32: -7604566203267556925
+      absorb_visual_33: 4207525991292040732
+      absorb_visual_34: 6867546026352107930
+      absorb_visual_35: 6793867372209674766
+      absorb_visual_36: 6693034569716548435
+      absorb_visual_37: -798752963469479390
+      absorb_visual_38: 8369462267367044286
+      absorb_visual_39: 3007458176716239378
+      absorb_visual_4: 5507277857973584887
+      absorb_visual_40: 3419138225079958979
+      absorb_visual_41: -6703823169481223685
+      absorb_visual_42: 1671748117097450524
+      absorb_visual_43: -691100544622819059
+      absorb_visual_44: 1789458810180864126
+      absorb_visual_45: -8202696456541840086
+      absorb_visual_46: -7866536746650733241
+      absorb_visual_47: -8419979806957354275
+      absorb_visual_48: -5582838645707728843
+      absorb_visual_49: -3766622717045423772
+      absorb_visual_5: 4833457445536036806
+      absorb_visual_50: 1721011134424161594
+      absorb_visual_51: 9163452059097236386
+      absorb_visual_52: 2290008583233718791
+      absorb_visual_53: -2587026562412792943
+      absorb_visual_54: -7928109266797732523
+      absorb_visual_55: -6262643210105374785
+      absorb_visual_56: -4987516967133737279
+      absorb_visual_57: 3026508227456988891
+      absorb_visual_58: -2488431277052543780
+      absorb_visual_59: 8462222275426057984
+      absorb_visual_6: 2052479163056142129
+      absorb_visual_60: 3765654499730905464
+      absorb_visual_61: -8693270039660563811
+      absorb_visual_62: 6558581540913787245
+      absorb_visual_63: -4351167246195072432
+      absorb_visual_64: -1636057822478617357
+      absorb_visual_65: 7356301708136091542
+      absorb_visual_66: -5038278226543668873
+      absorb_visual_67: -9201586854687731871
+      absorb_visual_68: -5288791904064286593
+      absorb_visual_69: -4460554014405422493
+      absorb_visual_7: 4431720379284146292
+      absorb_visual_70: 916611046084943598
+      absorb_visual_71: -1139846590625252101
+      absorb_visual_72: -2857703212398178794
+      absorb_visual_73: -4557071572331524601
+      absorb_visual_74: 5587934005073643092
+      absorb_visual_75: -1682860303894885039
+      absorb_visual_76: 5737137797860017583
+      absorb_visual_77: 732187434548409487
+      absorb_visual_78: 6946879885401957034
+      absorb_visual_79: 773262700539398528
+      absorb_visual_8: -7843990035840735226
+      absorb_visual_80: 7722603923942966253
+      absorb_visual_81: -776136176948312699
+      absorb_visual_82: -2667630879045211357
+      absorb_visual_83: -2579131329571142942
+      absorb_visual_84: -3826172885904966155
+      absorb_visual_85: 878148833850098649
+      absorb_visual_86: -7797140018017257204
+      absorb_visual_87: -4696335925937108205
+      absorb_visual_88: 7836779928449886209
+      absorb_visual_89: 1585716213211352431
+      absorb_visual_9: -9002607666434004706
+      absorb_visual_90: 5203401450547355112
+      absorb_visual_91: -8783766241653140924
+      absorb_visual_92: -2558194622692967180
+      absorb_visual_93: 4295816214278988693
+      absorb_visual_94: 6463518549124157697
+      absorb_visual_95: -6946546073569485579
+      absorb_visual_96: 4505065642164526160
+      absorb_visual_97: -1473544653364899834
+      absorb_visual_98: -2393568153855103049
+      absorb_visual_99: 7886909132344024361
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

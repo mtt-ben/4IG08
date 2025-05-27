@@ -133,7 +133,11 @@ public class Simulation : MonoBehaviour
         // Place particles in grid
         foreach (Particle p in particles)
         {
-            grid[p.grid_x, p.grid_y].Add(p);
+            if (p.grid_x >= 0 && p.grid_x < grid_size_x &&
+                p.grid_y >= 0 && p.grid_y < grid_size_y)
+            {
+                grid[p.grid_x, p.grid_y].Add(p);
+            }
         }
 
         DoubleDensityRelaxation();
