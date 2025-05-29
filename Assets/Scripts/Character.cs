@@ -19,6 +19,7 @@ public class Character : MonoBehaviour
     public float size = 1.0f;
     private Simulation sim;
     private bool isPropulsing = false;
+    private Animator crouchAnimator;
 
     void Start()
     {
@@ -33,6 +34,7 @@ public class Character : MonoBehaviour
         sim = FindFirstObjectByType<Simulation>();
         isPropulsing = false;
         absorbVisual.SetActive(false);
+        crouchAnimator = body.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -74,6 +76,16 @@ public class Character : MonoBehaviour
         if (Input.GetKey(KeyCode.S) && !isPropulsing)
         {
             rb.AddForce(Vector2.down * 20f, ForceMode2D.Force);
+        }
+        if (Input.GetKey(KeyCode.S) && isGrounded)
+        {
+            rb.linearVelocity = Vector2.zero;
+            crouchAnimator.SetTrigger("PlayCrouch");
+        }
+        if (Input.GetKeyUp(KeyCode.S) && isGrounded)
+        {
+            crouchAnimator.SetTrigger("StopCrouch");
+            crouchAnimator.ResetTrigger("PlayCrouch");
         }
         if ((Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))&& !isPropulsing)
         {
@@ -162,6 +174,7 @@ public class Character : MonoBehaviour
         }
         else {
             absorbVisual.SetActive(false);
+            absorbVisual.transform.localScale = Vector3.zero;
         }
     }
 
