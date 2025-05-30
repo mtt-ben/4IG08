@@ -20,6 +20,7 @@ public class Character : MonoBehaviour
     private Simulation sim;
     private bool isPropulsing = false;
     private Animator crouchAnimator;
+    private Animator absorbAnimator;
 
     void Start()
     {
@@ -35,6 +36,9 @@ public class Character : MonoBehaviour
         isPropulsing = false;
         absorbVisual.SetActive(false);
         crouchAnimator = body.GetComponent<Animator>();
+        crouchAnimator.Play("uncrouch");
+        absorbAnimator = absorbVisual.GetComponent<Animator>();
+        absorbAnimator.SetTrigger("Disappear");
     }
 
     // Update is called once per frame
@@ -81,6 +85,7 @@ public class Character : MonoBehaviour
         {
             rb.linearVelocity = Vector2.zero;
             crouchAnimator.SetTrigger("PlayCrouch");
+            crouchAnimator.ResetTrigger("StopCrouch");
         }
         if (Input.GetKeyUp(KeyCode.S) && isGrounded)
         {
@@ -155,7 +160,13 @@ public class Character : MonoBehaviour
 
     void handleAbsorption() {
         if (Input.GetMouseButton(1) && !isPropulsing) {
-            absorbVisual.SetActive(true);
+            if (!absorbVisual.activeSelf) {
+                absorbVisual.SetActive(true);
+            }
+            else {
+                absorbAnimator.SetTrigger("Appear");
+                absorbAnimator.ResetTrigger("Disappear");
+            }
             absorbVisual.transform.Rotate(0, 0, 10 * Time.deltaTime);
             Vector2 center = (Vector2)absorbCollider.transform.position + absorbCollider.offset;
             float radius = absorbCollider.radius * absorbCollider.transform.lossyScale.x;
@@ -173,8 +184,8 @@ public class Character : MonoBehaviour
             }
         }
         else {
-            absorbVisual.SetActive(false);
-            absorbVisual.transform.localScale = Vector3.zero;
+            absorbAnimator.SetTrigger("Disappear");
+            absorbAnimator.ResetTrigger("Appear");            
         }
     }
 
