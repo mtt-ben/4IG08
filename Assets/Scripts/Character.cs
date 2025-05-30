@@ -19,7 +19,7 @@ public class Character : MonoBehaviour
     public float size = 1.0f;
     private Simulation sim;
     private bool isPropulsing = false;
-    private Animator crouchAnimator;
+    private Animator bodyAnimator;
     private Animator absorbAnimator;
 
     void Start()
@@ -35,10 +35,8 @@ public class Character : MonoBehaviour
         sim = FindFirstObjectByType<Simulation>();
         isPropulsing = false;
         absorbVisual.SetActive(false);
-        crouchAnimator = body.GetComponent<Animator>();
-        crouchAnimator.Play("uncrouch");
+        bodyAnimator = body.GetComponent<Animator>();
         absorbAnimator = absorbVisual.GetComponent<Animator>();
-        absorbAnimator.SetTrigger("Disappear");
     }
 
     // Update is called once per frame
@@ -77,20 +75,32 @@ public class Character : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(-10, rb.linearVelocity.y);
         }
-        if (Input.GetKey(KeyCode.S) && !isPropulsing)
+        if (Input.GetKey(KeyCode.S) && !isPropulsing && !isGrounded)
         {
             rb.AddForce(Vector2.down * 20f, ForceMode2D.Force);
+            bodyAnimator.SetTrigger("PlayFall");
+            bodyAnimator.ResetTrigger("StopFall");   
+        }
+        if (Input.GetKeyDown(KeyCode.S) && isGrounded)
+        {
+            bodyAnimator.SetTrigger("PlayCrouch");
+            bodyAnimator.ResetTrigger("StopCrouch");
+        }
+        if (Input.GetKeyUp(KeyCode.S) || isGrounded)
+        {
+            bodyAnimator.SetTrigger("StopFall");
+            bodyAnimator.ResetTrigger("PlayFall");
         }
         if (Input.GetKey(KeyCode.S) && isGrounded)
         {
             rb.linearVelocity = Vector2.zero;
-            crouchAnimator.SetTrigger("PlayCrouch");
-            crouchAnimator.ResetTrigger("StopCrouch");
+            bodyAnimator.SetTrigger("PlayCrouch");
+            bodyAnimator.ResetTrigger("StopCrouch");
         }
         if (Input.GetKeyUp(KeyCode.S) && isGrounded)
         {
-            crouchAnimator.SetTrigger("StopCrouch");
-            crouchAnimator.ResetTrigger("PlayCrouch");
+            bodyAnimator.SetTrigger("StopCrouch");
+            bodyAnimator.ResetTrigger("PlayCrouch");
         }
         if ((Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))&& !isPropulsing)
         {
