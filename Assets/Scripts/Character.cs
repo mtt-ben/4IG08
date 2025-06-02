@@ -24,6 +24,7 @@ public class Character : MonoBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = 60;
         rb = GetComponent<Rigidbody2D>();
         bc = GetComponent<BoxCollider2D>();
         absorbCollider = GetComponent<CircleCollider2D>();
@@ -42,17 +43,20 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rb.bodyType == RigidbodyType2D.Kinematic)
+        if (rb.bodyType != RigidbodyType2D.Kinematic)
         {
-            eyesTrackMouse();
-            return;
+            handleMovements();
         }
-
-        handleMovements();
-        handlePropulsion();
-        handleAbsorption();
         eyesTrackMouse();
         adaptSizeToParticleCount();
+    }
+
+    void FixedUpdate() {
+        if (rb.bodyType != RigidbodyType2D.Kinematic)
+        {
+            handlePropulsion();
+            handleAbsorption();
+        }
     }
 
     void handleMovements() {
@@ -132,7 +136,7 @@ public class Character : MonoBehaviour
                     sim.AddParticle(p);
 
                     // Boost player in the opposite direction
-                    float boostStrength = 0.5f;
+                    float boostStrength = 2f;
                     rb.AddForce(-direction * boostStrength, ForceMode2D.Impulse);
                     particleCount--;
                 }
