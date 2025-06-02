@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      my_boy_crouched_0: 620585860739138308
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
