@@ -17,7 +17,6 @@ public class Character : MonoBehaviour
     public float particleCount = 500f;
     public float maxParticleCount = 500f;
     public float size = 1.0f;
-    public int frameRate = 60;
     private Simulation sim;
     private bool isPropulsing = false;
     private Animator bodyAnimator;
@@ -30,6 +29,7 @@ public class Character : MonoBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = 60;
         rb = GetComponent<Rigidbody2D>();
         bc = GetComponent<BoxCollider2D>();
         absorbCollider = GetComponent<CircleCollider2D>();
@@ -50,7 +50,6 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Application.targetFrameRate = frameRate;
         RaycastHit2D hit = Physics2D.BoxCast(bc.bounds.center, bc.bounds.size, 0f, Vector2.down, 0.1f, LayerMask.GetMask("Ground"));
         isGrounded = hit.collider != null;
         isTouchingWall = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, 0.1f, LayerMask.GetMask("Ground"));

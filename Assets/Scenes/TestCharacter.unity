@@ -1272,7 +1272,8 @@ MonoBehaviour:
   x_max: 20
   y_min: -10
   y_max: 10
-  DT: 0.01
+  particlesToAdd: []
+  DT: 0.05
   k: 1
   k_near: 10
   h: 1.5

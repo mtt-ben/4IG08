@@ -19,6 +19,7 @@ public class Simulation : MonoBehaviour
     public float y_min = -10f; // The minimum y coordinate for the grid
     public float y_max = 10f; // The maximum y coordinate for the grid
     public list particlesToAdd = new list(); // Particles to be added in the next step
+    public int frameRate = 60;
 
     // Physics parameters
     public float DT = 0.03f; // Time step
@@ -113,6 +114,7 @@ public class Simulation : MonoBehaviour
     }
 
     void Update() {
+        Application.targetFrameRate = frameRate;
     }
 
     // Simulation Step
