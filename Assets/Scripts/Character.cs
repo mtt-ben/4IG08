@@ -17,14 +17,19 @@ public class Character : MonoBehaviour
     public float particleCount = 500f;
     public float maxParticleCount = 500f;
     public float size = 1.0f;
+    public int frameRate = 60;
     private Simulation sim;
     private bool isPropulsing = false;
     private Animator bodyAnimator;
     private Animator absorbAnimator;
+    private bool isGrounded = false;
+    private bool isTouchingWall = false;
+    private bool isCrouching = false;
+    private Vector2 shootDirection;
+    private Vector3 spawnPos;
 
     void Start()
     {
-        Application.targetFrameRate = 60;
         rb = GetComponent<Rigidbody2D>();
         bc = GetComponent<BoxCollider2D>();
         absorbCollider = GetComponent<CircleCollider2D>();
@@ -38,11 +43,22 @@ public class Character : MonoBehaviour
         absorbVisual.SetActive(false);
         bodyAnimator = body.GetComponent<Animator>();
         absorbAnimator = absorbVisual.GetComponent<Animator>();
+        shootDirection = Vector2.zero;
+        spawnPos = Vector3.zero;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Application.targetFrameRate = frameRate;
+        RaycastHit2D hit = Physics2D.BoxCast(bc.bounds.center, bc.bounds.size, 0f, Vector2.down, 0.1f, LayerMask.GetMask("Ground"));
+        isGrounded = hit.collider != null;
+        isTouchingWall = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, 0.1f, LayerMask.GetMask("Ground"));
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPos.z = 0;
+
+        shootDirection = (mouseWorldPos - (Vector3)rb.position).normalized;
+        spawnPos = rb.position + shootDirection * size;
         if (rb.bodyType != RigidbodyType2D.Kinematic)
         {
             handleMovements();
@@ -60,10 +76,6 @@ public class Character : MonoBehaviour
     }
 
     void handleMovements() {
-        RaycastHit2D hit = Physics2D.BoxCast(bc.bounds.center, bc.bounds.size, 0f, Vector2.down, 0.1f, LayerMask.GetMask("Ground"));
-        bool isGrounded = hit.collider != null;
-        bool isTouchingWall = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, 0.1f, LayerMask.GetMask("Ground"));
-    
         if (isGrounded && !isPropulsing) {
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
         }
@@ -98,11 +110,13 @@ public class Character : MonoBehaviour
         if (Input.GetKey(KeyCode.S) && isGrounded)
         {
             rb.linearVelocity = Vector2.zero;
+            isCrouching = true;
             bodyAnimator.SetTrigger("PlayCrouch");
             bodyAnimator.ResetTrigger("StopCrouch");
         }
         if (Input.GetKeyUp(KeyCode.S) && isGrounded)
         {
+            isCrouching = false;
             bodyAnimator.SetTrigger("StopCrouch");
             bodyAnimator.ResetTrigger("PlayCrouch");
         }
@@ -110,21 +124,17 @@ public class Character : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
         }
+        if (Input.GetMouseButton(0)) {
+            isPropulsing = true;
+        }
+        else if (Input.GetMouseButtonUp(0)) {
+            isPropulsing = false;
+        }
     }
 
     void handlePropulsion() {
-        RaycastHit2D hit = Physics2D.BoxCast(bc.bounds.center, bc.bounds.size, 0f, Vector2.down, 0.1f, LayerMask.GetMask("Ground"));
-        bool isGrounded = hit.collider != null;
-        if (Input.GetMouseButton(0))
+        if (isPropulsing)
         {
-            isPropulsing = true;
-            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mouseWorldPos.z = 0;
-
-            Vector2 direction = (mouseWorldPos - body.position).normalized;
-            Vector3 spawnPos = body.position + (Vector3)direction * size;
-
-
             if (particleCount > 0) {
                 GameObject particleGO = Instantiate(particleObject, spawnPos, Quaternion.identity);
                 Particle p = particleGO.GetComponent<Particle>();
@@ -132,18 +142,17 @@ public class Character : MonoBehaviour
                 if (p != null)
                 {
                     // Add particle to simulation
-                    p.velocity = direction * 10f;
+                    p.velocity = shootDirection * 10f;
                     sim.AddParticle(p);
 
                     // Boost player in the opposite direction
                     float boostStrength = 2f;
-                    rb.AddForce(-direction * boostStrength, ForceMode2D.Impulse);
+                    if (!isCrouching) {
+                        rb.AddForce(-shootDirection * boostStrength, ForceMode2D.Impulse);
+                    }
                     particleCount--;
                 }
             }
-        }
-        else {
-            isPropulsing = false;
         }
     }
 

@@ -11713,6 +11713,7 @@ MonoBehaviour:
   x_max: 10
   y_min: -10
   y_max: 10
+  particlesToAdd: []
   DT: 0.01
   k: 1
   k_near: 10

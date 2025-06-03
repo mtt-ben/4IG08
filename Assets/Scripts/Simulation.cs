@@ -18,6 +18,7 @@ public class Simulation : MonoBehaviour
     public float x_max = 20f; // The maximum x coordinate for the grid
     public float y_min = -10f; // The minimum y coordinate for the grid
     public float y_max = 10f; // The maximum y coordinate for the grid
+    public list particlesToAdd = new list(); // Particles to be added in the next step
 
     // Physics parameters
     public float DT = 0.03f; // Time step
@@ -96,7 +97,6 @@ public class Simulation : MonoBehaviour
             }
 
             p.position += dx;
-
         }
     }
 
@@ -112,8 +112,11 @@ public class Simulation : MonoBehaviour
         }
     }
 
+    void Update() {
+    }
+
     // Simulation Step
-    void LateUpdate()
+    void FixedUpdate()
     {
         // Apply gravity
         foreach (Particle p in particles)
@@ -161,19 +164,24 @@ public class Simulation : MonoBehaviour
             RemoveParticle(p);
             Destroy(p.gameObject);
         }
+
+        foreach (Particle p in particlesToAdd)
+        {
+            particles.Add(p);
+
+            int gridX = Mathf.Clamp((int)((p.position.x - x_min) / (x_max - x_min) * grid_size_x), 0, grid_size_x - 1);
+            int gridY = Mathf.Clamp((int)((p.position.y - y_min) / (y_max - y_min) * grid_size_y), 0, grid_size_y - 1);
+
+            grid[gridX, gridY].Add(p);
+            p.grid_x = gridX;
+            p.grid_y = gridY;
+        }
+        particlesToAdd.Clear();
     }
 
     public void AddParticle(Particle p)
     {
-        particles.Add(p);
-
-        int gridX = Mathf.Clamp((int)((p.position.x - x_min) / (x_max - x_min) * grid_size_x), 0, grid_size_x - 1);
-        int gridY = Mathf.Clamp((int)((p.position.y - y_min) / (y_max - y_min) * grid_size_y), 0, grid_size_y - 1);
-
-        grid[gridX, gridY].Add(p);
-
-        p.grid_x = gridX;
-        p.grid_y = gridY;
+        particlesToAdd.Add(p);
     }
 
     public void RemoveParticle(Particle p)
