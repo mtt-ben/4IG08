@@ -64,6 +64,10 @@ public class Character : MonoBehaviour
         }
         eyesTrackMouse();
         adaptSizeToParticleCount();
+        if (transform.position.y < -20f)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     void FixedUpdate() {
