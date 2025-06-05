@@ -174,6 +174,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &25197949
 Rigidbody2D:
   serializedVersion: 5
@@ -347,6 +348,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &57321146
 Rigidbody2D:
   serializedVersion: 5
@@ -520,6 +522,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &108742748
 Rigidbody2D:
   serializedVersion: 5
@@ -693,6 +696,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &114662775
 Rigidbody2D:
   serializedVersion: 5
@@ -866,6 +870,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &130115568
 Rigidbody2D:
   serializedVersion: 5
@@ -1039,6 +1044,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &153590450
 Rigidbody2D:
   serializedVersion: 5
@@ -1212,6 +1218,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &174404271
 Rigidbody2D:
   serializedVersion: 5
@@ -1385,6 +1392,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &178899287
 Rigidbody2D:
   serializedVersion: 5
@@ -1558,6 +1566,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &196985638
 Rigidbody2D:
   serializedVersion: 5
@@ -1731,6 +1740,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &198905959
 Rigidbody2D:
   serializedVersion: 5
@@ -1904,6 +1914,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &214993453
 Rigidbody2D:
   serializedVersion: 5
@@ -2077,6 +2088,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &239957315
 Rigidbody2D:
   serializedVersion: 5
@@ -2368,6 +2380,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!1 &273205807
 GameObject:
   m_ObjectHideFlags: 0
@@ -2541,6 +2554,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!1 &283033022
 GameObject:
   m_ObjectHideFlags: 0
@@ -2596,6 +2610,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &283033026
 Rigidbody2D:
   serializedVersion: 5
@@ -2769,6 +2784,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &313717026
 Rigidbody2D:
   serializedVersion: 5
@@ -2942,6 +2958,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &334504039
 Rigidbody2D:
   serializedVersion: 5
@@ -3115,6 +3132,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &336476613
 Rigidbody2D:
   serializedVersion: 5
@@ -3288,6 +3306,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &357242929
 Rigidbody2D:
   serializedVersion: 5
@@ -3461,6 +3480,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &366326791
 Rigidbody2D:
   serializedVersion: 5
@@ -3768,6 +3788,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &375907781
 Rigidbody2D:
   serializedVersion: 5
@@ -3941,6 +3962,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &416485884
 Rigidbody2D:
   serializedVersion: 5
@@ -4114,6 +4136,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &422956403
 Rigidbody2D:
   serializedVersion: 5
@@ -4287,6 +4310,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &438217141
 Rigidbody2D:
   serializedVersion: 5
@@ -4460,6 +4484,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &445356419
 Rigidbody2D:
   serializedVersion: 5
@@ -4751,6 +4776,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!1 &462485745
 GameObject:
   m_ObjectHideFlags: 0
@@ -4806,6 +4832,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &462485749
 Rigidbody2D:
   serializedVersion: 5
@@ -4979,6 +5006,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &462697079
 Rigidbody2D:
   serializedVersion: 5
@@ -5152,6 +5180,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &464541583
 Rigidbody2D:
   serializedVersion: 5
@@ -5325,6 +5354,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &487886187
 Rigidbody2D:
   serializedVersion: 5
@@ -5498,6 +5528,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &513149558
 Rigidbody2D:
   serializedVersion: 5
@@ -5789,6 +5820,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -5981,6 +6013,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &531823027
 Rigidbody2D:
   serializedVersion: 5
@@ -6154,6 +6187,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &551166620
 Rigidbody2D:
   serializedVersion: 5
@@ -6327,6 +6361,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &557823607
 Rigidbody2D:
   serializedVersion: 5
@@ -6500,6 +6535,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &571194213
 Rigidbody2D:
   serializedVersion: 5
@@ -6673,6 +6709,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &575653049
 Rigidbody2D:
   serializedVersion: 5
@@ -6846,6 +6883,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &584641165
 Rigidbody2D:
   serializedVersion: 5
@@ -7019,6 +7057,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &618221444
 Rigidbody2D:
   serializedVersion: 5
@@ -7276,6 +7315,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &651532703
 Rigidbody2D:
   serializedVersion: 5
@@ -7567,6 +7607,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!1 &723074035
 GameObject:
   m_ObjectHideFlags: 0
@@ -7656,6 +7697,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &733267181
 Rigidbody2D:
   serializedVersion: 5
@@ -7829,6 +7871,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &742303759
 Rigidbody2D:
   serializedVersion: 5
@@ -8002,6 +8045,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &764239501
 Rigidbody2D:
   serializedVersion: 5
@@ -8175,6 +8219,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &794407970
 Rigidbody2D:
   serializedVersion: 5
@@ -8348,6 +8393,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &802062566
 Rigidbody2D:
   serializedVersion: 5
@@ -8639,6 +8685,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!1 &838094139
 GameObject:
   m_ObjectHideFlags: 0
@@ -8694,6 +8741,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &838094143
 Rigidbody2D:
   serializedVersion: 5
@@ -8867,6 +8915,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &841665040
 Rigidbody2D:
   serializedVersion: 5
@@ -9174,6 +9223,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &862436928
 Rigidbody2D:
   serializedVersion: 5
@@ -9347,6 +9397,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &869547569
 Rigidbody2D:
   serializedVersion: 5
@@ -9520,6 +9571,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &880033737
 Rigidbody2D:
   serializedVersion: 5
@@ -9811,6 +9863,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!1 &912856218
 GameObject:
   m_ObjectHideFlags: 0
@@ -9866,6 +9919,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &912856222
 Rigidbody2D:
   serializedVersion: 5
@@ -10039,6 +10093,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &933174617
 Rigidbody2D:
   serializedVersion: 5
@@ -10212,6 +10267,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &939961239
 Rigidbody2D:
   serializedVersion: 5
@@ -10385,6 +10441,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &975599023
 Rigidbody2D:
   serializedVersion: 5
@@ -10558,6 +10615,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &988090074
 Rigidbody2D:
   serializedVersion: 5
@@ -10731,6 +10789,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1000424702
 Rigidbody2D:
   serializedVersion: 5
@@ -10904,6 +10963,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1046495425
 Rigidbody2D:
   serializedVersion: 5
@@ -11077,6 +11137,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1059504576
 Rigidbody2D:
   serializedVersion: 5
@@ -11250,6 +11311,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1071107285
 Rigidbody2D:
   serializedVersion: 5
@@ -11557,6 +11619,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1093063279
 Rigidbody2D:
   serializedVersion: 5
@@ -11707,17 +11770,8 @@ MonoBehaviour:
   Player: {fileID: 0}
   Base_Particle: {fileID: 0}
   particles: []
-  grid_size_x: 60
-  grid_size_y: 30
-  x_min: -10
-  x_max: 10
-  y_min: -10
-  y_max: 10
   particlesToAdd: []
-  DT: 0.01
-  k: 1
-  k_near: 10
-  h: 1.5
+  frameRate: 60
 --- !u!4 &1114464314
 Transform:
   m_ObjectHideFlags: 0
@@ -11788,6 +11842,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1116875670
 Rigidbody2D:
   serializedVersion: 5
@@ -11961,6 +12016,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1123786304
 Rigidbody2D:
   serializedVersion: 5
@@ -12134,6 +12190,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1126356569
 Rigidbody2D:
   serializedVersion: 5
@@ -12307,6 +12364,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1147473841
 Rigidbody2D:
   serializedVersion: 5
@@ -12480,6 +12538,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1168625487
 Rigidbody2D:
   serializedVersion: 5
@@ -12653,6 +12712,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1178998696
 Rigidbody2D:
   serializedVersion: 5
@@ -12826,6 +12886,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1184202634
 Rigidbody2D:
   serializedVersion: 5
@@ -12999,6 +13060,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1191916113
 Rigidbody2D:
   serializedVersion: 5
@@ -13172,6 +13234,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1216445020
 Rigidbody2D:
   serializedVersion: 5
@@ -13345,6 +13408,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1219312571
 Rigidbody2D:
   serializedVersion: 5
@@ -13636,6 +13700,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!1 &1224792645
 GameObject:
   m_ObjectHideFlags: 0
@@ -13691,6 +13756,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1224792649
 Rigidbody2D:
   serializedVersion: 5
@@ -13864,6 +13930,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1285345094
 Rigidbody2D:
   serializedVersion: 5
@@ -14037,6 +14104,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1316338394
 Rigidbody2D:
   serializedVersion: 5
@@ -14210,6 +14278,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1339271205
 Rigidbody2D:
   serializedVersion: 5
@@ -14383,6 +14452,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1352562299
 Rigidbody2D:
   serializedVersion: 5
@@ -14556,6 +14626,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1358608719
 Rigidbody2D:
   serializedVersion: 5
@@ -14729,6 +14800,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1421428018
 Rigidbody2D:
   serializedVersion: 5
@@ -14902,6 +14974,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1443797722
 Rigidbody2D:
   serializedVersion: 5
@@ -15075,6 +15148,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1456606505
 Rigidbody2D:
   serializedVersion: 5
@@ -15248,6 +15322,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1490288980
 Rigidbody2D:
   serializedVersion: 5
@@ -15421,6 +15496,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1526577306
 Rigidbody2D:
   serializedVersion: 5
@@ -15594,6 +15670,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1537217772
 Rigidbody2D:
   serializedVersion: 5
@@ -15767,6 +15844,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1560074662
 Rigidbody2D:
   serializedVersion: 5
@@ -15940,6 +16018,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1591896825
 Rigidbody2D:
   serializedVersion: 5
@@ -16113,6 +16192,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1593647050
 Rigidbody2D:
   serializedVersion: 5
@@ -16286,6 +16366,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1630109198
 Rigidbody2D:
   serializedVersion: 5
@@ -16459,6 +16540,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1634798469
 Rigidbody2D:
   serializedVersion: 5
@@ -16632,6 +16714,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1645713756
 Rigidbody2D:
   serializedVersion: 5
@@ -16805,6 +16888,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1659478232
 Rigidbody2D:
   serializedVersion: 5
@@ -16978,6 +17062,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1661504787
 Rigidbody2D:
   serializedVersion: 5
@@ -17096,6 +17181,65 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1678350640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1678350642}
+  - component: {fileID: 1678350641}
+  m_Layer: 0
+  m_Name: Parameters
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1678350641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678350640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b16f686cce6c7ea40a65ea57ac626b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DT: 0.01
+  X_MIN: -20
+  X_MAX: 20
+  Y_MIN: -10
+  Y_MAX: 10
+  GRID_SIZE_X: 60
+  GRID_SIZE_Y: 30
+  KERNEL_RADIUS: 2
+  G: 9.81
+  REST_DENSITY: 50
+  COLLISION_RADIUS: 0.25
+  PRESSURE_K: 1
+  NEAR_PRESSURE_K: 10
+  MAX_PRESSURE: 1
+  DAMPING: 0.8
+--- !u!4 &1678350642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678350640}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1682276953
 GameObject:
   m_ObjectHideFlags: 0
@@ -17151,6 +17295,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1682276957
 Rigidbody2D:
   serializedVersion: 5
@@ -17442,6 +17587,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!1 &1712902737
 GameObject:
   m_ObjectHideFlags: 0
@@ -17615,6 +17761,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!1 &1715828046
 GameObject:
   m_ObjectHideFlags: 0
@@ -17670,6 +17817,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1715828050
 Rigidbody2D:
   serializedVersion: 5
@@ -17843,6 +17991,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1732571746
 Rigidbody2D:
   serializedVersion: 5
@@ -18016,6 +18165,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1746652134
 Rigidbody2D:
   serializedVersion: 5
@@ -18189,6 +18339,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1766368265
 Rigidbody2D:
   serializedVersion: 5
@@ -18362,6 +18513,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1770452292
 Rigidbody2D:
   serializedVersion: 5
@@ -18535,6 +18687,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1779326216
 Rigidbody2D:
   serializedVersion: 5
@@ -18708,6 +18861,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1811902050
 Rigidbody2D:
   serializedVersion: 5
@@ -18881,6 +19035,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1840346683
 Rigidbody2D:
   serializedVersion: 5
@@ -19054,6 +19209,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1864921504
 Rigidbody2D:
   serializedVersion: 5
@@ -19227,6 +19383,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1890618309
 Rigidbody2D:
   serializedVersion: 5
@@ -19400,6 +19557,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1900874446
 Rigidbody2D:
   serializedVersion: 5
@@ -19573,6 +19731,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1917850303
 Rigidbody2D:
   serializedVersion: 5
@@ -19746,6 +19905,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &1941973217
 Rigidbody2D:
   serializedVersion: 5
@@ -19919,6 +20079,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &2010774906
 Rigidbody2D:
   serializedVersion: 5
@@ -20362,6 +20523,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!1 &2019397701
 GameObject:
   m_ObjectHideFlags: 0
@@ -20417,6 +20579,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &2019397705
 Rigidbody2D:
   serializedVersion: 5
@@ -20590,6 +20753,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &2019561633
 Rigidbody2D:
   serializedVersion: 5
@@ -20763,6 +20927,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &2023270859
 Rigidbody2D:
   serializedVersion: 5
@@ -20936,6 +21101,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &2024894265
 Rigidbody2D:
   serializedVersion: 5
@@ -21109,6 +21275,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &2035561636
 Rigidbody2D:
   serializedVersion: 5
@@ -21282,6 +21449,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &2061989186
 Rigidbody2D:
   serializedVersion: 5
@@ -21455,6 +21623,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &2081982350
 Rigidbody2D:
   serializedVersion: 5
@@ -21628,6 +21797,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &2108590774
 Rigidbody2D:
   serializedVersion: 5
@@ -21801,6 +21971,7 @@ MonoBehaviour:
   density: 0
   density_near: 0
   damping: 0.8
+  collisionNormals: []
 --- !u!50 &2115324087
 Rigidbody2D:
   serializedVersion: 5
@@ -21928,3 +22099,4 @@ SceneRoots:
   - {fileID: 723074036}
   - {fileID: 2018037406}
   - {fileID: 1114464314}
+  - {fileID: 1678350642}

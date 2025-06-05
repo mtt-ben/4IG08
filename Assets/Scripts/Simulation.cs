@@ -4,35 +4,33 @@ using UnityEngine;
 using list = System.Collections.Generic.List<Particle>;
 using f_list = System.Collections.Generic.List<float>;
 
-using static Config;
 using NUnit.Framework.Constraints;
 public class Simulation : MonoBehaviour
 {
     public GameObject Player;
     public GameObject Base_Particle; // The reference base particle object
     public list particles; // The list of particles
-    public int grid_size_x = 60; // The number of grid cells in the x direction
-    public int grid_size_y = 30; // The number of grid cells in the y direction
     public list[,] grid; // The grid for spatial partitioning
-    public float x_min = -20f; // The minimum x coordinate for the grid
-    public float x_max = 20f; // The maximum x coordinate for the grid
-    public float y_min = -10f; // The minimum y coordinate for the grid
-    public float y_max = 10f; // The maximum y coordinate for the grid
-    public list particlesToAdd = new list(); // Particles to be added in the next step
+    public list particlesToAdd = new(); // Particles to be added in the next step
     public int frameRate = 60;
 
-    // Physics parameters
-    public float DT = 0.03f; // Time step
-    public float k = 1f; // Pressure constant
-    public float k_near = 10f; // Near pressure constant
-    public float h = KERNEL_RADIUS;
+    // Simulation parameters
+    private float H => Config.Instance.KERNEL_RADIUS; // Kernel radius
+    private float G => Config.Instance.G; // Gravitational acceleration
+    private float X_min => Config.Instance.X_MIN; // Minimum x boundary
+    private float X_max => Config.Instance.X_MAX; // Maximum x boundary
+    private float Y_min => Config.Instance.Y_MIN; // Minimum y boundary
+    private float Y_max => Config.Instance.Y_MAX; // Maximum y boundary
+    private int Grid_size_x => Config.Instance.GRID_SIZE_X; // The number of grid cells in the x direction
+    private int Grid_size_y => Config.Instance.GRID_SIZE_Y; // The number of grid cells in the y direction
+    private float DT => Config.Instance.DT; // Time step for the simulation
 
     void Start()
     {
-        grid = new list[grid_size_x, grid_size_y];
-        for (int i = 0; i < grid_size_x; i++)
+        grid = new list[Grid_size_x, Grid_size_y];
+        for (int i = 0; i < Grid_size_x; i++)
         {
-            for (int j = 0; j < grid_size_y; j++)
+            for (int j = 0; j < Grid_size_y; j++)
             {
                 grid[i, j] = new list();
             }
@@ -51,8 +49,8 @@ public class Simulation : MonoBehaviour
             p.density = 0f;
             p.density_near = 0f;
 
-            int M = Mathf.CeilToInt(h / (x_max - x_min) * grid_size_x);
-            int L = Mathf.CeilToInt(h / (y_max - y_min) * grid_size_y);
+            int M = Mathf.CeilToInt(H / (X_max - X_min) * Grid_size_x);
+            int L = Mathf.CeilToInt(H / (Y_max - Y_min) * Grid_size_y);
 
             if (M < 1) M = 1;
             if (L < 1) L = 1;
@@ -63,14 +61,14 @@ public class Simulation : MonoBehaviour
                 {
                     int gridX = p.grid_x + i;
                     int gridY = p.grid_y + j;
-                    if (gridX < 0 || gridX >= grid_size_x || gridY < 0 || gridY >= grid_size_y) continue;
+                    if (gridX < 0 || gridX >= Grid_size_x || gridY < 0 || gridY >= Grid_size_y) continue;
                     if (grid[gridX, gridY] == null) continue;
 
                     foreach (Particle neighbor in grid[gridX, gridY])
                     {
-                        // if (neighbor == p) continue; // Skip self (maybe)
+                        if (neighbor == p) continue;
 
-                        float q = Vector2.Distance(p.position, neighbor.position) / h;
+                        float q = Vector2.Distance(p.position, neighbor.position) / H;
                         if (q < 1f)
                         {
                             p.density += (1 - q) * (1 - q);
@@ -83,8 +81,12 @@ public class Simulation : MonoBehaviour
                 }
             }
 
-            float pressure = k * (p.density - REST_DENSITY);
-            float nearPressure = k_near * p.density_near;
+            float pressure = Config.Instance.PRESSURE_K * (p.density - Config.Instance.REST_DENSITY);
+            float nearPressure = Config.Instance.NEAR_PRESSURE_K * p.density_near;
+
+            if (pressure > Config.Instance.MAX_PRESSURE) pressure = Config.Instance.MAX_PRESSURE;
+            if (nearPressure > Config.Instance.MAX_PRESSURE) nearPressure = Config.Instance.MAX_PRESSURE;
+
             Vector2 dx = Vector2.zero;
 
             for (int i = 0; i < neighbors.Count; i++)
@@ -92,9 +94,12 @@ public class Simulation : MonoBehaviour
                 Particle neighbor = neighbors[i];
                 float q = qList[i];
 
-                Vector2 D = DT * DT * (pressure * (1 - q) + nearPressure * (1 - q) * (1 - q)) * (neighbor.position - p.position);
-                neighbor.position += D / 2f;
-                dx -= D / 2f;
+                float closeness = 1 - q;
+                float D_val = (pressure * closeness + nearPressure * closeness * closeness);
+                Vector2 dir = (p.position - neighbor.position).normalized;
+                Vector2 displacement_for_pair = DT * DT * D_val * dir;
+                neighbor.position += displacement_for_pair * 0.5f;
+                dx -= displacement_for_pair * 0.5f;
             }
 
             p.position += dx;
@@ -105,15 +110,12 @@ public class Simulation : MonoBehaviour
     {
         foreach (Particle p in particles)
         {
-            var (collided, normal, penetration) = p.CheckCollision();
-            if (collided)
-            {
-                p.HandleCollision(normal, penetration);
-            }
+            p.ResolveAllCollisions();
         }
     }
 
-    void Update() {
+    void Update()
+    {
         Application.targetFrameRate = frameRate;
     }
 
@@ -123,56 +125,99 @@ public class Simulation : MonoBehaviour
         // Apply gravity
         foreach (Particle p in particles)
         {
-             p.velocity += new Vector2(0, -G * DT);
+            p.velocity += new Vector2(0, -G * DT);
+            p.collisionNormals.Clear();
         }
-
-        // Clear grid
-        for (int i = 0; i < grid_size_x; i++)
-        {
-            for (int j = 0; j < grid_size_y; j++)
-            {
-                grid[i, j].Clear();
-            }
-        }
-
-        // Place particles in grid
+        
         foreach (Particle p in particles)
         {
-            if (p.grid_x >= 0 && p.grid_x < grid_size_x &&
-                p.grid_y >= 0 && p.grid_y < grid_size_y)
-            {
-                grid[p.grid_x, p.grid_y].Add(p);
-            }
+            p.prevPosition = p.position;
+            p.position += p.velocity * DT;
         }
+
+        ClearGrid();
+        PopulateGrid();
 
         DoubleDensityRelaxation();
         ResolveCollisions();
 
-        // Update particle states
-        list particlesToRemove = new();
         foreach (Particle p in particles)
         {
-            if (p.position.x < x_min || p.position.x > x_max || p.position.y < y_min || p.position.y > y_max)
+            p.velocity = (p.position - p.prevPosition) / DT;
+
+            // Need to handle collisions after updating positions
+            foreach (Vector2 normal in p.collisionNormals)
+            {
+                if (Vector2.Dot(p.velocity, normal) < 0f)
+                {
+                    p.velocity = Vector2.Reflect(p.velocity, normal) * Config.Instance.DAMPING;
+                }
+            }
+
+            if (!float.IsNaN(p.position.x) && !float.IsNaN(p.position.y))
+                p.transform.position = p.position;
+        }
+
+        RemoveOutOfBoundsParticles();
+        AddNewParticles();
+    }
+
+    void ClearGrid()
+    {
+        for (int i = 0; i < Grid_size_x; i++)
+        {
+            for (int j = 0; j < Grid_size_y; j++)
+            {
+                grid[i, j].Clear();
+            }
+        }
+    }
+
+    void PopulateGrid()
+    {
+        foreach (Particle p in particles)
+        {
+            // Calculate grid coordinates based on current particle position
+            // Clamp to ensure they stay within bounds
+            int gridX = Mathf.Clamp((int)((p.position.x - X_min) / (X_max - X_min) * Grid_size_x), 0, Grid_size_x - 1);
+            int gridY = Mathf.Clamp((int)((p.position.y - Y_min) / (Y_max - Y_min) * Grid_size_y), 0, Grid_size_y - 1);
+
+            // Assign to particle for later neighbor lookups
+            p.grid_x = gridX;
+            p.grid_y = gridY;
+
+            // Add particle to the grid cell
+            grid[gridX, gridY].Add(p);
+        }
+    }
+
+    void RemoveOutOfBoundsParticles()
+    {
+        list particlesToRemove = new list();
+        foreach (Particle p in particles)
+        {
+            if (p.position.x < X_min || p.position.x > X_max || p.position.y < Y_min || p.position.y > Y_max)
             {
                 particlesToRemove.Add(p);
-                continue;
             }
-            p.UpdateState();
         }
 
-        // Remove particles that are out of bounds
         foreach (Particle p in particlesToRemove)
         {
-            RemoveParticle(p);
+            RemoveParticle(p); // This already handles removing from the grid
             Destroy(p.gameObject);
         }
+    }
 
+    void AddNewParticles()
+    {
         foreach (Particle p in particlesToAdd)
         {
             particles.Add(p);
 
-            int gridX = Mathf.Clamp((int)((p.position.x - x_min) / (x_max - x_min) * grid_size_x), 0, grid_size_x - 1);
-            int gridY = Mathf.Clamp((int)((p.position.y - y_min) / (y_max - y_min) * grid_size_y), 0, grid_size_y - 1);
+            // When adding, ensure particle's grid_x/y are also set for the first time
+            int gridX = Mathf.Clamp((int)((p.position.x - X_min) / (X_max - X_min) * Grid_size_x), 0, Grid_size_x - 1);
+            int gridY = Mathf.Clamp((int)((p.position.y - Y_min) / (Y_max - Y_min) * Grid_size_y), 0, Grid_size_y - 1);
 
             grid[gridX, gridY].Add(p);
             p.grid_x = gridX;
@@ -181,21 +226,23 @@ public class Simulation : MonoBehaviour
         particlesToAdd.Clear();
     }
 
-    public void AddParticle(Particle p)
-    {
-        particlesToAdd.Add(p);
-    }
-
     public void RemoveParticle(Particle p)
     {
         particles.Remove(p);
 
-        int gridX = Mathf.Clamp((int)((p.prevPosition.x - x_min) / (x_max - x_min) * grid_size_x), 0, grid_size_x - 1);
-        int gridY = Mathf.Clamp((int)((p.prevPosition.y - y_min) / (y_max - y_min) * grid_size_y), 0, grid_size_y - 1);
+        int gridX = Mathf.Clamp((int)((p.prevPosition.x - X_min) / (X_max - X_min) * Grid_size_x), 0, Grid_size_x - 1);
+        int gridY = Mathf.Clamp((int)((p.prevPosition.y - Y_min) / (Y_max - Y_min) * Grid_size_y), 0, Grid_size_y - 1);
 
         if (grid[gridX, gridY].Contains(p))
         {
             grid[gridX, gridY].Remove(p);
         }
+    }
+    
+    public void AddParticle(Particle p)
+    {
+        particlesToAdd.Add(p);
+        p.transform.parent = Player.transform; // Set parent to Player for organization
+        p.gameObject.SetActive(true); // Ensure the particle is active
     }
 }

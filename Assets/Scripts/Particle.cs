@@ -17,14 +17,15 @@ public class Particle : MonoBehaviour
     // Collision-related
     private CircleCollider2D circleCollider;
     public float damping = 0.8f;  // Damping factor for collision velocity response
+    public List<Vector2> collisionNormals = new(); // Store normals of collisions
 
     void Start()
     {
         position = transform.position;
         prevPosition = position;
         springs = new List<(float, float)>();
-        grid_x = (int)((position.x - Config.X_MIN) / (Config.X_MAX - Config.X_MIN) * Config.GRID_SIZE_X);
-        grid_y = (int)((position.y - Config.Y_MIN) / (Config.Y_MAX - Config.Y_MIN) * Config.GRID_SIZE_Y);
+        grid_x = (int)((position.x - Config.Instance.X_MIN) / (Config.Instance.X_MAX - Config.Instance.X_MIN) * Config.Instance.GRID_SIZE_X);
+        grid_y = (int)((position.y - Config.Instance.Y_MIN) / (Config.Instance.Y_MAX - Config.Instance.Y_MIN) * Config.Instance.GRID_SIZE_Y);
 
         // Initialize or add CircleCollider2D (set as trigger to avoid physics interference)
         circleCollider = GetComponent<CircleCollider2D>();
@@ -33,29 +34,13 @@ public class Particle : MonoBehaviour
             circleCollider = gameObject.AddComponent<CircleCollider2D>();
             circleCollider.isTrigger = true;
         }
-        circleCollider.radius = Config.COLLISION_RADIUS;
+        circleCollider.radius = Config.Instance.COLLISION_RADIUS;
     }
 
-    // Update is called by Simulation.cs
-    public void UpdateState()
+    public List<(Vector2 normal, float penetration)> GetCollisions()
     {
-        // Apply velocity to position
-        prevPosition = position;
-        position += velocity * Config.DT;
-
-        // Update the grid position
-        grid_x = (int)((position.x - Config.X_MIN) / (Config.X_MAX - Config.X_MIN) * Config.GRID_SIZE_X);
-        grid_y = (int)((position.y - Config.Y_MIN) / (Config.Y_MAX - Config.Y_MIN) * Config.GRID_SIZE_Y);
-
-        // Update the particle's transform position
-        if (!float.IsNaN(position.x) && !float.IsNaN(position.y))
-            transform.position = position;
-    }
-    
-    // Collision detection returns (collided?, normal, penetration)
-    public (bool, Vector2, float) CheckCollision()
-    {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(position, Config.COLLISION_RADIUS, LayerMask.GetMask("Default", "Ground"));
+        Collider2D[] hits = Physics2D.OverlapCircleAll(position, Config.Instance.COLLISION_RADIUS, LayerMask.GetMask("Default", "Ground"));
+        List<(Vector2 normal, float penetration)> collisions = new();
 
         foreach (Collider2D hit in hits)
         {
@@ -65,26 +50,32 @@ public class Particle : MonoBehaviour
                 Vector2 diff = position - closestPoint;
                 float dist = diff.magnitude;
 
-                if (dist < Config.COLLISION_RADIUS && dist > 0f)  // Avoid division by zero
+                if (dist < Config.Instance.COLLISION_RADIUS && dist > 0f)
                 {
                     Vector2 normal = diff.normalized;
-                    float penetration = Config.COLLISION_RADIUS - dist;
-                    return (true, normal, penetration);
+                    float penetration = Config.Instance.COLLISION_RADIUS - dist;
+                    collisions.Add((normal, penetration));
                 }
             }
         }
-        return (false, Vector2.zero, 0f);
+
+        return collisions;
     }
 
-    // Handle collision response: reflect velocity and resolve penetration
-    public void HandleCollision(Vector2 normal, float penetration)
+    public void ResolveAllCollisions(int maxIterations = 3)
     {
-        velocity = ReflectVelocity(velocity, normal) * damping;
-        position += normal * penetration;
+        for (int i = 0; i < maxIterations; i++)
+        {
+            var collisions = GetCollisions();
+            if (collisions.Count == 0) break;
+
+            foreach (var (normal, penetration) in collisions)
+            {
+                // Resolve penetration
+                position += normal * penetration;
+                collisionNormals.Add(normal);
+            }
+        }
     }
 
-    private Vector2 ReflectVelocity(Vector2 velocity, Vector2 normal)
-    {
-        return Vector2.Reflect(velocity, normal);
-    }
 }

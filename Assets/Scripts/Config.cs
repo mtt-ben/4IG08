@@ -2,18 +2,40 @@ using UnityEngine;
 
 public class Config : MonoBehaviour
 {
-    //Simulation parameters
-    public static float DT = 0.01f; // Time step
-    public static float G = 0.5f; // Acceleration of gravity
-    public static int GRID_SIZE_X = 60; // Number of grid cells in the x direction
-    public static int GRID_SIZE_Y = 30; // Number of grid cells in the y direction
-    public static float X_MIN = -20f; // Minimum x coordinate for the grid
-    public static float X_MAX = 20f; // Maximum x coordinate for the grid
-    public static float Y_MIN = -10f; // Minimum y coordinate for the grid
-    public static float Y_MAX = 10f; // Maximum y coordinate for the grid
+    [Header("Time & Simulation Bounds")]
+    public float DT = 0.04f; // Now a public field, can be changed
+    public float X_MIN = -20f;
+    public float X_MAX = 20f;
+    public float Y_MIN = -10f;
+    public float Y_MAX = 10f;
+    public int GRID_SIZE_X = 60;
+    public int GRID_SIZE_Y = 30;
 
-    // Normal water parameters
-    public static float REST_DENSITY = 3f; // Default density, will be compared to local density to calculate pressure
-    public static float KERNEL_RADIUS = 1f; // Spacing between particles, used to calculate pressure
-    public static float COLLISION_RADIUS = 0.2f; // Collision radius, used to detect collisions with other particles
+    [Header("SPH Constants")]
+    public float KERNEL_RADIUS = 0.5f;
+    public float G = 9.81f;
+    public float REST_DENSITY = 10f;
+    public float COLLISION_RADIUS = 0.25f;
+
+    [Header("Pressure & Viscosity")]
+    public float PRESSURE_K = 1f;
+    public float NEAR_PRESSURE_K = 10f;
+    public float MAX_PRESSURE = 1f;
+
+    [Header("Collision & Damping")]
+    public float DAMPING = 0.8f; // Damping factor for collision velocity response
+
+    public static Config Instance { get; private set; }
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 }
