@@ -12,7 +12,7 @@ public class Button : MonoBehaviour
     }
 
     void FixedUpdate() {
-        RaycastHit2D hit = Physics2D.BoxCast(bc.bounds.center, bc.bounds.size, 0f, direction.normalized, 0.2f, LayerMask.GetMask("Water"));
+        RaycastHit2D hit = Physics2D.BoxCast(bc.bounds.center, bc.bounds.size, 0f, direction.normalized, 0.4f, LayerMask.GetMask("Water"));
         bool isHit = hit.collider != null;
         if (isHit && !activated) {
             Debug.Log("Button activated!");

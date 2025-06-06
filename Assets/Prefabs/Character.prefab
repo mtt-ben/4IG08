@@ -482,6 +482,7 @@ MonoBehaviour:
   pupil1: {fileID: 4523459295753663356}
   pupil2: {fileID: 2164437305272975473}
   visual: {fileID: 1021255687737921267}
+  particlesParent: {fileID: 0}
   particleObject: {fileID: 226359761320017548, guid: 8dda1fc7fd807f348af61e06643aa8ad, type: 3}
   absorbVisual: {fileID: 1444586864542780684}
   particleCount: 500

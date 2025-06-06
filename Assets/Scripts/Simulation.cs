@@ -242,7 +242,6 @@ public class Simulation : MonoBehaviour
     public void AddParticle(Particle p)
     {
         particlesToAdd.Add(p);
-        p.transform.parent = Player.transform; // Set parent to Player for organization
         p.gameObject.SetActive(true); // Ensure the particle is active
     }
 }

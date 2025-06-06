@@ -12,11 +12,12 @@ public class Character : MonoBehaviour
     public Transform pupil1;
     public Transform pupil2;
     public Transform visual;
+    public Transform particlesParent;
     public GameObject particleObject;
     public GameObject absorbVisual;
-    public float particleCount = 500f;
-    public float maxParticleCount = 500f;
-    public float size = 1.0f;
+    private float particleCount = 200f;
+    private float maxParticleCount = 400f;
+    private float size = 1.0f;
     private Simulation sim;
     private bool isPropulsing = false;
     private Animator bodyAnimator;
@@ -139,7 +140,7 @@ public class Character : MonoBehaviour
         if (isPropulsing)
         {
             if (particleCount > 0) {
-                GameObject particleGO = Instantiate(particleObject, spawnPos, Quaternion.identity);
+                GameObject particleGO = Instantiate(particleObject, spawnPos, Quaternion.identity, particlesParent);
                 Particle p = particleGO.GetComponent<Particle>();
 
                 if (p != null)
@@ -216,7 +217,7 @@ public class Character : MonoBehaviour
     }
 
     void adaptSizeToParticleCount() {
-        float scaleFactor = Mathf.Clamp(particleCount/maxParticleCount, 0.1f, 5.0f);
+        float scaleFactor = Mathf.Clamp(particleCount/200f, 0.1f, 5.0f);
         size = scaleFactor;
         transform.localScale = new Vector3(0.35f * scaleFactor, 0.35f * scaleFactor, 1);
         rb.mass = scaleFactor;

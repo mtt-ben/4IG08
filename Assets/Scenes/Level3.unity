@@ -456,6 +456,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 710033834060162411, guid: 63224666ac06eda47ab708249ed0dbc0, type: 3}
+      propertyPath: particlesParent
+      value: 
+      objectReference: {fileID: 748401115}
     - target: {fileID: 2843798175307831322, guid: 63224666ac06eda47ab708249ed0dbc0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.9
@@ -1334,18 +1338,8 @@ MonoBehaviour:
   Player: {fileID: 0}
   Base_Particle: {fileID: 0}
   particles: []
-  grid_size_x: 60
-  grid_size_y: 30
-  x_min: -20
-  x_max: 20
-  y_min: -10
-  y_max: 10
   particlesToAdd: []
   frameRate: 60
-  DT: 0.05
-  k: 1
-  k_near: 10
-  h: 1.5
 --- !u!4 &1493641294
 Transform:
   m_ObjectHideFlags: 0
