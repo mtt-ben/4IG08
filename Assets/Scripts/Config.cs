@@ -21,6 +21,8 @@ public class Config : MonoBehaviour
     public float PRESSURE_K = 1f;
     public float NEAR_PRESSURE_K = 10f;
     public float MAX_PRESSURE = 1f;
+    public float LIN_VISCOSITY = 0.1f; // Linear viscosity coefficient
+    public float QUAD_VISCOSITY = 0.1f; // Quadratic viscosity coefficient
 
     [Header("Collision & Damping")]
     public float DAMPING = 0.8f; // Damping factor for collision velocity response

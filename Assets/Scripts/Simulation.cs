@@ -24,6 +24,8 @@ public class Simulation : MonoBehaviour
     private int Grid_size_x => Config.Instance.GRID_SIZE_X; // The number of grid cells in the x direction
     private int Grid_size_y => Config.Instance.GRID_SIZE_Y; // The number of grid cells in the y direction
     private float DT => Config.Instance.DT; // Time step for the simulation
+    private float lin_visc => Config.Instance.LIN_VISCOSITY; // Linear viscosity coefficient
+    private float quad_visc => Config.Instance.QUAD_VISCOSITY; // Quadratic viscosity coefficient
 
     void Start()
     {
@@ -95,7 +97,7 @@ public class Simulation : MonoBehaviour
                 float q = qList[i];
 
                 float closeness = 1 - q;
-                float D_val = (pressure * closeness + nearPressure * closeness * closeness);
+                float D_val = pressure * closeness + nearPressure * closeness * closeness;
                 Vector2 dir = (p.position - neighbor.position).normalized;
                 Vector2 displacement_for_pair = DT * DT * D_val * dir;
                 neighbor.position += displacement_for_pair * 0.5f;
@@ -103,6 +105,29 @@ public class Simulation : MonoBehaviour
             }
 
             p.position += dx;
+        }
+    }
+
+    void ApplyViscosity()
+    {
+        for (int i = 0; i < particles.Count; i++)
+        {
+            Particle p = particles[i];
+            for (int j = i + 1; j < particles.Count; j++)
+            {
+                Particle neighbor = particles[j];
+                if (p == neighbor) continue;
+
+                float q = Vector2.Distance(p.position, neighbor.position) / H;
+                if (q < 1f)
+                {
+                    float u = Vector2.Dot(p.velocity - neighbor.velocity, (p.position - neighbor.position).normalized);
+                    float closeness = 1 - q;
+                    Vector2 I = DT * closeness * (lin_visc * u + quad_visc * u * u) * (p.position - neighbor.position).normalized;
+                    p.velocity -= I * 0.5f;
+                    neighbor.velocity += I * 0.5f;
+                }
+            }
         }
     }
 
@@ -128,6 +153,8 @@ public class Simulation : MonoBehaviour
             p.velocity += new Vector2(0, -G * DT);
             p.collisionNormals.Clear();
         }
+
+        ApplyViscosity();
         
         foreach (Particle p in particles)
         {
