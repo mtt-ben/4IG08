@@ -15,8 +15,8 @@ public class Character : MonoBehaviour
     public Transform particlesParent;
     public GameObject particleObject;
     public GameObject absorbVisual;
-    private float particleCount = 200f;
-    private float maxParticleCount = 400f;
+    private float particleCount = 300f;
+    private float maxParticleCount = 800f;
     private float size = 1.0f;
     private Simulation sim;
     private bool isPropulsing = false;
@@ -150,7 +150,7 @@ public class Character : MonoBehaviour
                     sim.AddParticle(p);
 
                     // Boost player in the opposite direction
-                    float boostStrength = 2f;
+                    float boostStrength = 1.5f;
                     if (!isCrouching) {
                         rb.AddForce(-shootDirection * boostStrength, ForceMode2D.Impulse);
                     }
@@ -217,10 +217,10 @@ public class Character : MonoBehaviour
     }
 
     void adaptSizeToParticleCount() {
-        float scaleFactor = Mathf.Clamp(particleCount/200f, 0.1f, 5.0f);
+        float scaleFactor = Mathf.Clamp(particleCount/300f, 0.2f, 5.0f);
         size = scaleFactor;
         transform.localScale = new Vector3(0.35f * scaleFactor, 0.35f * scaleFactor, 1);
-        rb.mass = scaleFactor;
+        rb.mass = scaleFactor*0.5f + 0.8f;
     }
 
     float getParticleCount() {

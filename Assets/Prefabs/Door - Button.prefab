@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6722194020150305862}
   - component: {fileID: 5814415421353437539}
   - component: {fileID: 840654388847554001}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7332142160561665598}
   - component: {fileID: 935611978804576604}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Color
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 345534312092881226}
   - component: {fileID: 1921461612793604735}
   - component: {fileID: 5233846088337311766}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
