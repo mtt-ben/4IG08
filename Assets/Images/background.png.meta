@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e6af67ee92ed14a4894aac3af794b117
+guid: a9c931b4b732d6942819a4ddd1a9b8c9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 620585860739138308
-    second: my_boy_crouched_0
+      213: -7443756053782179069
+    second: background_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: my_boy_crouched_0
+      name: background_0
       rect:
         serializedVersion: 2
-        x: 461
-        y: 121
-        width: 997
-        height: 840
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4038cf56d83cc9800800000000000000
-      internalID: 620585860739138308
+      spriteID: 30356abce4772b890800000000000000
+      internalID: -7443756053782179069
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      my_boy_crouched_0: 620585860739138308
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

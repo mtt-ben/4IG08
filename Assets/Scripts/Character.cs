@@ -146,7 +146,7 @@ public class Character : MonoBehaviour
                 if (p != null)
                 {
                     // Add particle to simulation
-                    p.velocity = shootDirection * 10f;
+                    p.velocity = shootDirection * 20f;
                     sim.AddParticle(p);
 
                     // Boost player in the opposite direction
@@ -221,5 +221,9 @@ public class Character : MonoBehaviour
         size = scaleFactor;
         transform.localScale = new Vector3(0.35f * scaleFactor, 0.35f * scaleFactor, 1);
         rb.mass = scaleFactor;
+    }
+
+    float getParticleCount() {
+        return particleCount;
     }
 }
