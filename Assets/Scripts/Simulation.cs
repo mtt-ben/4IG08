@@ -181,7 +181,7 @@ public class Simulation : MonoBehaviour
                 }
             }
 
-            if (!float.IsNaN(p.position.x) && !float.IsNaN(p.position.y))
+            if (!float.IsNaN(p.position.x) && !float.IsNaN(p.position.y) && p != null)
                 p.transform.position = p.position;
         }
 
@@ -231,6 +231,7 @@ public class Simulation : MonoBehaviour
 
         foreach (Particle p in particlesToRemove)
         {
+            if (p == null) continue; // Safety check
             RemoveParticle(p); // This already handles removing from the grid
             Destroy(p.gameObject);
         }

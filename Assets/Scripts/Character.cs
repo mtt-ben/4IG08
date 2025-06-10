@@ -197,7 +197,7 @@ public class Character : MonoBehaviour
             absorbVisual.transform.Rotate(0, 0, 10 * Time.deltaTime);
             Vector2 center = (Vector2)absorbCollider.transform.position + absorbCollider.offset;
             float radius = absorbCollider.radius * absorbCollider.transform.lossyScale.x;
-            Collider2D[] hits = Physics2D.OverlapCircleAll(center, radius, LayerMask.GetMask("Water"));
+            Collider2D[] hits = Physics2D.OverlapCircleAll(center, radius, LayerMask.GetMask("Water","IgnoreCollision"));
             foreach (Collider2D hit in hits)
             {
                 Particle particle = hit.GetComponent<Particle>();
@@ -207,6 +207,15 @@ public class Character : MonoBehaviour
                     sim.RemoveParticle(particle);
                     Destroy(hit.gameObject);
                     particleCount++;
+                }
+                Reservoir reservoir = hit.GetComponent<Reservoir>();
+                if (reservoir != null && particleCount < maxParticleCount)
+                {
+                    bool absorbed = reservoir.getAbsorbed(1);
+                    if (absorbed) {
+                        particleCount++;
+                        Debug.Log("Absorbing from reservoir");
+                    }
                 }
             }
         }
