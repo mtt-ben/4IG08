@@ -232,7 +232,7 @@ public class Character : MonoBehaviour
         rb.mass = scaleFactor*0.5f + 0.8f;
     }
 
-    float getParticleCount() {
+    public float getParticleCount() {
         return particleCount;
     }
 }
