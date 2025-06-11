@@ -457,7 +457,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.15, y: 6.7}
+  m_AnchoredPosition: {x: 5.65, y: 6.7}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &402695495
@@ -897,13 +897,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318389386}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.99999917, w: 0.0012936688}
-  m_LocalPosition: {x: 10.198309, y: 1.6979355, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.96715534, w: 0.25418615}
+  m_LocalPosition: {x: 9.96, y: 3.31, z: 0}
   m_LocalScale: {x: 1.1338322, y: 1.5254582, z: 0.60402}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180.148}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 209.451}
 --- !u!1 &1320874624
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,13 +984,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320874624}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.003462675, w: 0.99999404}
-  m_LocalPosition: {x: 10.181473, y: 3.1428769, z: 0}
-  m_LocalScale: {x: 0.32578197, y: 2.63, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.24958324, w: 0.96835333}
+  m_LocalPosition: {x: 9.409891, y: 4.2601366, z: 0}
+  m_LocalScale: {x: 0.32578197, y: 2.0201032, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.397}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 28.906}
 --- !u!1 &1533064688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1846,14 +1846,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7893026448884427057, guid: aa5e494be22a37a459d67d408a5613e4, type: 3}
-      propertyPath: nextScene
-      value: Level2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7893026448884427057, guid: aa5e494be22a37a459d67d408a5613e4, type: 3}
-      propertyPath: particleThreshold
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 7938445179093277055, guid: aa5e494be22a37a459d67d408a5613e4, type: 3}
       propertyPath: m_Name
       value: End

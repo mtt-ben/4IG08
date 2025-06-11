@@ -8,6 +8,8 @@ public class End : MonoBehaviour
     private BoxCollider2D bc;
     private float playerParticleCount = 0f;
     private TMP_Text label;
+    private Transform staticVisual;
+    private Transform movingVisual;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,6 +17,8 @@ public class End : MonoBehaviour
         Character character = FindFirstObjectByType<Character>();
         playerParticleCount = character.getParticleCount();
         label = GetComponentInChildren<TMP_Text>();
+        staticVisual = transform.Find("Static");
+        movingVisual = transform.Find("Moving");
     }
 
     // Update is called once per frame
@@ -26,6 +30,7 @@ public class End : MonoBehaviour
         }
         UpdateParticleCount();
         UpdateLabel();
+        UpdateVisual();
     }
 
     void UpdateLabel() {
@@ -45,5 +50,17 @@ public class End : MonoBehaviour
 
     void UpdateParticleCount() {
         playerParticleCount = FindFirstObjectByType<Character>().getParticleCount();
+    }
+
+    void UpdateVisual() {
+        movingVisual.Rotate(0f, 0f, 1f);
+        if (playerParticleCount >= particleThreshold)
+        {
+            movingVisual.GetComponent<SpriteRenderer>().color = Color.green;
+        }
+        else
+        {
+            movingVisual.GetComponent<SpriteRenderer>().color = Color.red;
+        }
     }
 }
