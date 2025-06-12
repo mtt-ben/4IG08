@@ -146,7 +146,10 @@ public class Character : MonoBehaviour
                 if (p != null)
                 {
                     // Add particle to simulation
-                    p.velocity = shootDirection * 20f;
+                    // Add some random spread to the shoot direction (±5 degrees)
+                    float angleOffset = Random.Range(-2f, 2f);
+                    Vector2 randomizedDirection = Quaternion.Euler(0, 0, angleOffset) * shootDirection;
+                    p.velocity = randomizedDirection.normalized * 24f;
                     sim.AddParticle(p);
 
                     // Boost player in the opposite direction

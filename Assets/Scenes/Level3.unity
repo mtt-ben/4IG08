@@ -486,6 +486,10 @@ PrefabInstance:
       propertyPath: nextScene
       value: Level4
       objectReference: {fileID: 0}
+    - target: {fileID: 7893026448884427057, guid: aa5e494be22a37a459d67d408a5613e4, type: 3}
+      propertyPath: particleThreshold
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7938445179093277055, guid: aa5e494be22a37a459d67d408a5613e4, type: 3}
       propertyPath: m_Name
       value: End
