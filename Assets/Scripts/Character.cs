@@ -27,6 +27,7 @@ public class Character : MonoBehaviour
     private bool isCrouching = false;
     private Vector2 shootDirection;
     private Vector3 spawnPos;
+    private AudioSource audioSource;
 
     void Start()
     {
@@ -46,6 +47,7 @@ public class Character : MonoBehaviour
         absorbAnimator = absorbVisual.GetComponent<Animator>();
         shootDirection = Vector2.zero;
         spawnPos = Vector3.zero;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -139,6 +141,20 @@ public class Character : MonoBehaviour
     void handlePropulsion() {
         if (isPropulsing)
         {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (audioSource.isPlaying)
+                {
+                    audioSource.Stop();
+                }
+                isPropulsing = false;
+                return;
+            }
+            if (!audioSource.isPlaying)
+            {
+                audioSource.loop = true;
+                audioSource.Play();
+            }
             if (particleCount > 0) {
                 GameObject particleGO = Instantiate(particleObject, spawnPos, Quaternion.identity, particlesParent);
                 Particle p = particleGO.GetComponent<Particle>();
@@ -146,7 +162,7 @@ public class Character : MonoBehaviour
                 if (p != null)
                 {
                     // Add particle to simulation
-                    // Add some random spread to the shoot direction (±5 degrees)
+                    // Add some random spread to the shoot direction (±2 degrees)
                     float angleOffset = Random.Range(-2f, 2f);
                     Vector2 randomizedDirection = Quaternion.Euler(0, 0, angleOffset) * shootDirection;
                     p.velocity = randomizedDirection.normalized * 24f;
@@ -159,6 +175,12 @@ public class Character : MonoBehaviour
                     }
                     particleCount--;
                 }
+            }
+        }
+        else {
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
             }
         }
     }
