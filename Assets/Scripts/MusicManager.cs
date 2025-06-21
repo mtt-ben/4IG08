@@ -39,7 +39,7 @@ public class MusicManager : MonoBehaviour
     void PlayMusicForScene(string sceneName)
     {
         AudioClip targetClip;
-        if (sceneName == "MainMenu" || sceneName == "Settings" ){
+        if (sceneName == "MainMenu" || sceneName == "Settings" || sceneName == "Tutorial"){
             targetClip = menuMusic;
         }
         else {
